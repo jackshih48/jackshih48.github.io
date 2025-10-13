@@ -1,0 +1,3 @@
+git add -A
+git commit -m "K&R: update chapX (YYYY-MM-DD)"
+git push origin main
