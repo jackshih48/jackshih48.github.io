@@ -4,6 +4,11 @@ description: "一些關於數學與通訊的筆記"
 url: "https://jackshih48.github.io"   # 你的 GitHub Pages 網址
 baseurl: ""                           # user site 留空
 
+# Pages
+nav:
+  - Home: index.md
+  - C Practice: c_practice.md
+
 # --- 主題（GitHub Pages 內建支援） ---
 theme: minima
 
