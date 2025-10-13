@@ -1,19 +1,17 @@
 ---
 layout: page
-title: C Programming Practice
+title: C Practice
 ---
 
-# K&R C Programming 練習
+# C Programming Practice
 
-這裡是我在 K&R 經典教材上的練習成果整理，包含各章節的程式碼。
+這裡是我在 K&R "The C Programming Language" 經典教材上的練習成果整理，包含各章節的程式碼。
 
 ---
 
 ## 📂 Chapter 1
 - [1_1_Hello.c](/kr_c/code/chap1/1_1_Hello.c)
 - [1_5_4_PrintWord_ex12.c](/kr_c/code/chap1/1_5_4_PrintWord_ex12.c)
-
-（👉 這裡可以自由增減，放每個章節的連結）
 
 ---
 
