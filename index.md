@@ -21,7 +21,7 @@ title: Jack Shih的技術與研究筆記
 ---
 
 ### 💻 Programming
-- [The C Programming Language by K&R](/c_practice)
+- [C](/c_practice)
 
 ---
 
