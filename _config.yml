@@ -1,17 +1,16 @@
 # --- 站台設定 ---
 title: "Jack Shih's Blog"
 description: "一些關於數學與通訊的筆記"
-url: "https://jackshih48.github.io"   # 你的 GitHub Pages 網址
-baseurl: ""                           # user site 留空
+url: "https://jackshih48.github.io"
+baseurl: ""               # user/organization site 留空
 
-# Pages
-nav:
-  - Home: index.md
-  - C Practice: c_practice.md
+# 顯示在導覽列的頁面（minima 用這個）
+header_pages:
+  - c_practice.md         # Home 會自動指到 index.md
 
-# --- 主題（GitHub Pages 內建支援） ---
+# GitHub Pages 內建支援的主題
 theme: minima
 
-# --- 顯示在頁尾的社群連結（可留白或之後再改） ---
+# 頁尾社群資訊（可改）
 github_username: jackshih48
 email: jackshih48@gmail.com
