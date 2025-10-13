@@ -20,8 +20,8 @@ title: Jack Shih的技術與研究筆記
 
 ---
 
-### 💻 C 練習入口
-- 前往：**[C Programming Practice](/c_practice)**
+### 💻 Programming
+- [The C Programming Language by K&R](/c_practice)
 
 ---
 
