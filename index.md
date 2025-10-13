@@ -11,7 +11,7 @@ title: Jack Shih的技術與研究筆記
 ## 🛰 Communication Background
 - [Discrete Time Signal Processing](https://www.overleaf.com/read/crshsdffjjnk#3f3187)
 - [Information Theory](https://www.overleaf.com/read/wbswrsfmdvyx#f8b14f)
-  
+
 ---
 
 ## 📡 Radio Channel Model
@@ -20,7 +20,12 @@ title: Jack Shih的技術與研究筆記
 
 ---
 
+### 💻 C 練習入口
+- 前往：**[C Programming Practice](/c_practice)**
+
+---
+
 ### About Me
 - Email: jackshih48@gmail.com  
-- Expertise：Radio channel 
-- GitHub： [https://github.com/jackshih48](https://github.com/jackshih48)
+- Expertise：Radio channel  
+- GitHub： <https://github.com/jackshih48>
