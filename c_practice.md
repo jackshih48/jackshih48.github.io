@@ -27,6 +27,10 @@ title: C Practice
 - [1_5_3_SuppressBlank_ex9_ver2.c](/kr_c/code/chap1/1_5_3_SuppressBlank_ex9_ver2.c)
 - [1_5_4_CointingWord.c](/kr_c/code/chap1/1_5_4_CointingWord.c)
 - [1_5_4_PrintWord_ex12.c](/kr_c/code/chap1/1_5_4_PrintWord_ex12.c)
+- [1_6_CharFrequencyHistogram_ex14.c](/kr_c/code/chap1/1_6_CharFrequencyHistogram_ex14.c)
+- [1_6_CountDigit.c](/kr_c/code/chap1/1_6_CountDigit.c)
+- [1_6_WordLengthHistogram_ex13.c](/kr_c/code/chap1/1_6_WordLengthHistogram_ex13.c)
+- [1_6_WordLengthHistogram_ex13_ver2.c](/kr_c/code/chap1/1_6_WordLengthHistogram_ex13_ver2.c)
 
 ---
 
