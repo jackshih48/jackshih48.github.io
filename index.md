@@ -4,7 +4,7 @@ title: Jack Shih的技術與研究筆記
 ---
 
 歡迎來到我的筆記作品集頁面 👋  
-這裡整理了我在 Overleaf 上撰寫的筆記與投影片，方便自己回顧，也能分享給別人。
+這裡整理了我在 Overleaf 上撰寫的筆記，方便自己回顧，也能分享給別人。
 
 ---
 
@@ -20,7 +20,7 @@ title: Jack Shih的技術與研究筆記
 
 ---
 
-### 💻 Programming
+## 💻 Programming
 - [C](/c_practice)
 
 ---
