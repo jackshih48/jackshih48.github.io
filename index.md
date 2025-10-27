@@ -9,7 +9,7 @@ title: Jack Shih的技術與研究筆記
 ---
 
 ## 🛰 Communication Background
-- [Discrete Time Signal Processing](https://www.overleaf.com/read/crshsdffjjnk#3f3187)
+- [Adaptive Signal Processing](https://www.overleaf.com/read/crshsdffjjnk#3f3187)
 - [Information Theory](https://www.overleaf.com/read/wbswrsfmdvyx#f8b14f)
 
 ---
