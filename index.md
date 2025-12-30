@@ -17,6 +17,7 @@ title: Jack Shih的技術與研究筆記
 ## 📡 Radio Channel Model
 - [Large Scale Fading](https://www.overleaf.com/read/pyyyfmrhkhdj#91c1a8)
 - [Small Scale Fading](https://www.overleaf.com/read/nkdnvgzcpgrb#25e936)
+- [OFDM](https://www.overleaf.com/read/yvqpzmcqmbjh#700fbf)
 
 ---
 
