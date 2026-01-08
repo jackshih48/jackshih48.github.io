@@ -1,5 +1,5 @@
 git pull origin main --rebase
 
 git add -A
-git commit -m "K&R: update chap1 (2025-10-14)"
+git commit -m "K&R: update chap1 (2026-01-08)"
 git push origin main
