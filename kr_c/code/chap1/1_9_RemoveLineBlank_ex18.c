@@ -40,20 +40,21 @@ int getLine(char line[], int line_length) {
 int removeBlank(char line[], int line_length) {
 	int i = line_length - 1; // Index of line tail
 	
-    if (i >= 0 && line[i - 1] == '\n') {
-        line[i - 1] = '\0';
+    if (i >= 0 && line[i] == '\0') {
         i--;
     }
 	
-	while (i >= 0 && (line[i - 1] == ' ' || line[i - 1] == '\t')) {
-		line[i - 1] = '\0';
+	while (i >= 0 && (line[i] == ' ' || line[i] == '\t' || line[i] == '\n')) {
 		i--;
 	}
 	
-    if (i > 0) {
-        line[i] = '\n';
-        line[i + 1] = '\0';
+    if (i < 0) {
+        line[0] = '\0';
+        return 0;
     }
-
-	return i;
-} /here
+	
+	line[i + 1] = '\n';
+	line[i + 2] = '\0';
+	
+	return i+1;
+}
