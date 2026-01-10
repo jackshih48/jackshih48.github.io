@@ -2,20 +2,23 @@
 
 #define MAXLINE 1000 // Maximum input line length
 
-int getline(char line[], int maxline);
-void copy(char to[], char from[]);
+int max = 0; // Maximum line length so far
+char line[MAXLINE]; // Current line
+char longest[MAXLINE]; // Longest line so far
 
-// Print the longest input line
+int getline(void);
+void copy(void);
+
+// Print the longest input line; specialized version
 int main(void) {
 	int len; // Current line length
-	int max = 0; // Maximum line length so far
-	char line[MAXLINE]; // Current line
-	char longest[MAXLINE]; // Longest line so far
+	extern int max;
+	extern char longest[];
 	
-	while ((len = getline(line, MAXLINE)) > 0) {
+	while ((len = getline()) > 0) {
 		if (len > max) {
 			max = len;
-			copy(longest, line);
+			copy();
 		}
 	}
 		
@@ -27,11 +30,11 @@ int main(void) {
 }
 
 // getline: Read a line and return length
-int getline(char line[], int maxline) {
+int getline(void) {
 	int c; // Input character
 	int i; // Index of array
 	
-	for (i = 0; i < maxline - 1 && (c = getchar()) != EOF && c != '\n'; i++) {
+	for (i = 0; i < MAXLINE - 1 && (c = getchar()) != EOF && c != '\n'; i++) {
 		line[i] = c;
 	}
 	
@@ -45,10 +48,12 @@ int getline(char line[], int maxline) {
 }
 
 // copy: Copy a string 'from' into 'to'
-void copy(char to[], char from[]) {
+void copy(void) {
 	int i = 0; // Index of array
+	extern char line[];
+	extern char longest[];
 	
-	while ((to[i] = from[i]) != '\0') {
+	while ((longest[i] = line[i]) != '\0') {
 		i++;
 	}
 }
