@@ -1,0 +1,14 @@
+Hi,	my name is	Jack.
+	Indented once (line starts with TAB)
+1234	X (TAB after 4 chars)
+1234567	X (TAB after 7 chars)
+12345678	X (TAB after 8 chars)
+A		B (two consecutive TABs between A and B)
+EndsWithTab	
+Mix	 of	 tabs	and words
+Spaces then tab:  	X (3 spaces then TAB)
+OnlyTab:	
+Trailing spaces after tab:	    X
+(blank line next)
+    
+End.
