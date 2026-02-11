@@ -1,0 +1,39 @@
+【Overview】 
+這是嵌入式開發的第一步，目標是建立軟硬體開發環境。
+解決驅動程式與 USB 線材問題，並透過寫入第一個 C 語言程式，
+讓 ESP32-S3 透過 USB (UART) 每一秒向電腦發送一次 "Hello World" 訊號，驗證晶片與通訊功能正常。
+
+
+【環境與驅動排錯】
+狀況: 解決方法,說明 
+1.找不到 COM Port: 安裝 CH343 驅動,副廠板子需要 WCH CH343 驅動才能被電腦識別。
+2.線材沒反應: 必須要A-C傳輸線, 但許多 USB 線僅能充電，需使用具備資料傳輸功能的線(可用手機測試)。
+
+
+【VS Code 專案設定】
+1.New Project -> Select framework
+2.Name, directory(C:\Development\Espressif\my)
+3.Target -> ESP32-S3
+4.Choose board -> Custom board
+5.Choose port(COM6 (或其他),依裝置管理員顯示為主)
+6.Choose template -> ESP32-IDF-Templates -> Sample project -> Create
+7.Explorer -> main -> main.c
+
+【補充】
+可以按板子上的RST按鈕(reset)，並確認count是否有重新開始。
+
+
+【Code】
+#include <stdio.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+
+void app_main(void)
+{
+    int i = 0;
+    while (1) {
+        printf("Hello Master! 這裡是 ESP32-S3 (COM6) - Count: %d\n", i);
+        i++;
+        vTaskDelay(1000 / portTICK_PERIOD_MS); // 每一秒印一次
+    }
+}

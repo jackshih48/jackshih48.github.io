@@ -1,0 +1,104 @@
+【Overview】
+這個專案的目標是讓 ESP32-S3 具備「聽覺」。
+透過 I2S 介面讀取全向麥克風的聲音數據，經過運算後判斷音量大小。
+當音量超過設定的門檻值（例如拍手或講話），即時點亮外部 LED，模擬聲控開關的效果。
+
+
+【麥克風 (INMP441) 接線】
+INMP441 腳位,ESP32-S3 腳位,說明
+VDD,3V3,千萬別接 5V，會燒掉
+GND,GND,接地
+L/R,GND,接地 (設定為左聲道，這條沒接數值會亂跳)
+SCK,GPIO 37,時脈線
+WS,GPIO 36,聲道選擇線
+SD,GPIO 35,數據輸出線
+
+
+【LED 燈接線】
+LED 腳位,連接對象,說明
+長腳 (+),GPIO 4
+短腳 (-),GND,先串兩個100歐姆的電阻再接地
+
+
+【code】
+#include <stdio.h>
+#include <math.h> // 數學庫 (用來算絕對值)
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "driver/i2s_std.h"
+#include "driver/gpio.h"
+
+// --- 1. 設定靈敏度 (關鍵在這裡！) ---
+// 數字越小越靈敏，數字越大越遲鈍
+// 建議範圍：安靜環境 500~1000，吵雜環境 2000~5000
+#define SOUND_THRESHOLD 40
+
+// --- 2. 硬體接線 ---
+#define LED_GPIO        GPIO_NUM_4  // 你的 LED 腳位
+#define I2S_BCK_IO      GPIO_NUM_37
+#define I2S_WS_IO       GPIO_NUM_36
+#define I2S_DO_IO       GPIO_NUM_35
+
+i2s_chan_handle_t rx_handle = NULL;
+
+void i2s_init() {
+    i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_AUTO, I2S_ROLE_MASTER);
+    i2s_new_channel(&chan_cfg, NULL, &rx_handle);
+    i2s_std_config_t std_cfg = {
+        .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(16000),
+        .slot_cfg = I2S_STD_PHILIPS_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_16BIT, I2S_SLOT_MODE_MONO),
+        .gpio_cfg = {
+            .mclk = I2S_GPIO_UNUSED,
+            .bclk = I2S_BCK_IO,
+            .ws = I2S_WS_IO,
+            .dout = I2S_GPIO_UNUSED,
+            .din = I2S_DO_IO,
+        },
+    };
+    i2s_channel_init_std_mode(rx_handle, &std_cfg);
+    i2s_channel_enable(rx_handle);
+}
+
+void app_main(void)
+{
+    i2s_init();
+    
+    // 初始化 LED
+    gpio_reset_pin(LED_GPIO);
+    gpio_set_direction(LED_GPIO, GPIO_MODE_OUTPUT);
+
+    printf("聲控燈啟動！目前的觸發門檻是: %d\n", SOUND_THRESHOLD);
+
+    int16_t i2s_readraw_buff[1024];
+    size_t bytes_read;
+
+    while (1) {
+        // 讀取聲音
+        if (i2s_channel_read(rx_handle, i2s_readraw_buff, sizeof(i2s_readraw_buff), &bytes_read, 1000) == ESP_OK) {
+            
+            // 計算平均音量
+            long long sum = 0;
+            int samples = bytes_read / 2;
+            if (samples > 0) {
+                for (int i = 0; i < samples; i++) {
+                    sum += abs(i2s_readraw_buff[i]);
+                }
+                int average_volume = sum / samples;
+
+                // --- 這裡就是判斷邏輯 ---
+                if (average_volume > SOUND_THRESHOLD) {
+                    // 太吵了 -> 亮燈
+                    gpio_set_level(LED_GPIO, 1);
+                    printf("偵測到聲音! (音量: %d) -> 開燈\n", average_volume);
+                    vTaskDelay(10 / portTICK_PERIOD_MS); 
+                } else {
+                    // 安靜 -> 關燈
+                    gpio_set_level(LED_GPIO, 0);
+                    // printf("... (音量: %d)\n", average_volume); //這行註解掉，不然畫面會太亂
+                }
+            }
+        }
+        // 反應速度 (太快燈會閃爍看不清，太慢會覺得延遲)
+        vTaskDelay(10 / portTICK_PERIOD_MS); 
+    }
+}

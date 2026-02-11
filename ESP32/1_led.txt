@@ -1,0 +1,51 @@
+【Overview】
+本專案目標是學習 ESP32 的 GPIO (通用輸入輸出) 控制。
+透過引入 driver/gpio.h 函式庫，將特定腳位設定為輸出模式 (Output)。
+並在無窮迴圈中切換高電位 (3.3V) 與低電位 (0V)，讓麵包板上的 LED 產生"亮1秒，滅1秒"的閃爍效果。
+
+
+【LED 燈接線】
+LED 腳位,連接對象,說明
+長腳 (+),GPIO 4
+短腳 (-),GND,先串兩個100歐姆的電阻再接地
+
+
+【Code】
+#include <stdio.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "driver/gpio.h" // <--- 關鍵！這是控制腳位的驅動庫
+
+// 定義我們要用的腳位 (如果你接在別的孔，請改這個數字)
+#define BLINK_GPIO 4 
+
+void app_main(void)
+{
+    // --- 1. 設定階段 (Setup) ---
+    
+    // 重置該腳位，把之前的設定清乾淨
+    gpio_reset_pin(BLINK_GPIO);
+    
+    // 設定這個腳位為「輸出模式 (Output)」
+    // 這樣我們才能送電給 LED
+    gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
+
+    printf("開始控制 GPIO %d 閃爍！\n", BLINK_GPIO);
+
+    // --- 2. 循環階段 (Loop) ---
+    while (1) {
+        // 開燈 (輸出 高電位 / 1 / High)
+        printf("LED ON!\n");
+        gpio_set_level(BLINK_GPIO, 1);
+        
+        // 停 1000 毫秒 (1秒)
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+
+        // 關燈 (輸出 低電位 / 0 / Low)
+        printf("LED OFF...\n");
+        gpio_set_level(BLINK_GPIO, 0);
+        
+        // 停 1000 毫秒
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+    }
+}
