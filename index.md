@@ -23,6 +23,8 @@ title: Jack Shih的技術與研究筆記
 
 ## 💻 Programming
 - [C](/c_practice)
+- [Data Structure](/data_structures)
+- [MCU](/esp32)
 
 ---
 
