@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #define MAX_TERMS 100
+#define MAX_COL 100
 
 struct term {
 	int col;
@@ -11,6 +12,7 @@ struct term {
 void printTriple(struct term *a);
 void printMatrix(struct term *a);
 void transpose(struct term *a, struct term *b);
+void fastTranspose(struct term *a, struct term *b);
 
 int main(void)
 {
@@ -18,6 +20,7 @@ int main(void)
 	int row, col, value;
 	struct term a[MAX_TERMS];
 	struct term b[MAX_TERMS];
+	struct term c[MAX_TERMS];
 	
 	// a[0] store the info of sparse matrix
 	printf("Enter the number of nonzero entries of your sparse matrix: ");
@@ -40,10 +43,13 @@ int main(void)
 	}
 	
 	transpose(a, b);
+	fastTranspose(b, c);
 	printTriple(a);
 	printTriple(b);
+	printTriple(c);
 	printMatrix(a);
 	printMatrix(b);
+	printMatrix(c);
 	
 	return 0;
 }
@@ -61,6 +67,35 @@ void transpose(struct term *a, struct term *b) // b is the transpose of a
 					currentb++;
 				}
 			}
+		}
+	}
+}
+
+void fastTranspose(struct term *a, struct term *b) // Faster algorithm
+{
+	int i, j;
+	int rowterms[MAX_COL]; // Number of nonzero entries in each column of original matrix
+	int startingPos[MAX_COL]; // Construct staring table
+	
+	b[0] = (struct term){a[0].row, a[0].col, a[0].value};
+	if (a[0].value > 0) { // Nonzero matrix
+		for (i = 0; i < a[0].col; i++) {
+			rowterms[i] = 0;
+		}
+		
+		for (i = 1; i <= a[0].value; i++) {
+			rowterms[a[i].col]++;
+		}
+		
+		startingPos[0] = 1;
+		for (i = 1; i < a[0].col; i++) {
+			startingPos[i] = startingPos[i-1] + rowterms[i-1]; 
+		}
+		
+		for (i = 1; i <= a[0].value; i++) {
+			j = startingPos[a[i].col];
+			startingPos[a[i].col]++;
+			b[j] = (struct term){a[i].row, a[i].col, a[i].value};
 		}
 	}
 }
