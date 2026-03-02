@@ -26,6 +26,7 @@ int main(void)
 	struct term b[MAX_TERMS];
 	struct term c[MAX_TERMS];
 	struct term d[MAX_TERMS];
+	struct term e[MAX_TERMS];
 	
 	// a[0] store the info of sparse matrix
 	printf("Enter the number of nonzero entries of your sparse matrix: ");
@@ -50,7 +51,8 @@ int main(void)
 	// print a, a^T, a*a^T
 	transpose(a, b);
 	fastTranspose(b, c); // c = a, but in correct order of triples
-	mmult(c, b, d);// d = c*b
+	mmult(c, b, d);// d = c*b = a*a^T
+	mmult(b, c, e);// e = b*c = a^T*a
 	//printTriple(a);
 	//printTriple(b);
 	//printTriple(c);
@@ -61,6 +63,8 @@ int main(void)
 	printMatrix(b);
 	printf("A(A^T):");
 	printMatrix(d);
+	printf("(A^T)A:");
+	printMatrix(e);
 	
 	return 0;
 }
