@@ -25,6 +25,7 @@ title: Jack Shih的專案與研究筆記
 - [C](/c_practice)
 - [Data Structure](/data_structures)
 - [MCU](/ESP32): [DEMO](https://www.youtube.com/shorts/Nv46WCSDo_0)
+- [LeetCode](/leetcode/)
 
 ---
 
