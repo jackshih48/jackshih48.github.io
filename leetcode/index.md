@@ -9,4 +9,4 @@ title: LeetCode 筆記
 
 ## 題目列表
 
-- [1. Two Sum](./two-sum.md)
+- [1. Two Sum](./two_sum.md)
