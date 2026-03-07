@@ -1,4 +1,7 @@
-# Two Sum 筆記
+---
+layout: page
+title: Two Sum 筆記
+---
 
 ## 1. 題目
 
