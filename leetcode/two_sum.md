@@ -1,3 +1,5 @@
+# Two Sum 筆記
+
 ## 1. 題目
 
 給定一個整數陣列 `nums` 和一個整數 `target`，要找出兩個 index `i, j`，使得：
@@ -395,7 +397,7 @@ if (key < 0) {
 
 因為在 C 裡，負數 `%` 正數，結果還是負的。
 
-不過這個寫法不是最嚴謹的工業級版本，因為：
+不過這個寫法不是最嚴謹的版本，因為：
 
 * 若 `key == INT_MIN`
 * `-key` 可能 overflow
@@ -404,7 +406,7 @@ if (key < 0) {
 
 ---
 
-## 4. 一句話總結
+## 總結
 
-Brute force 是「枚舉所有 pair」；
-hash table 解法是「我現在缺哪個數，把看過的數記起來，快速查 complement」。
+Brute force 是「枚舉所有 pair」。
+Hash table 解法是「我現在缺哪個數，把看過的數記起來，快速查 complement」。
