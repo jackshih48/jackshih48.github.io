@@ -253,7 +253,7 @@ free(temp);
 
 ## 3. 一些 C 語法重點、疑問與補充
 
-### 3.1 malloc 回傳什麼，需不需要 type cast
+### 3.1 `malloc` 回傳什麼，需不需要 type cast
 
 `malloc` 回傳的是 `void *`
 
@@ -276,7 +276,7 @@ int *sol = (int *)malloc(2 * sizeof *sol);
 
 ---
 
-### 3.2 sizeof 是 operator，不是 function
+### 3.2 `sizeof` 是 operator，不是 function
 
 `sizeof` 是一元運算子（unary operator），不是函式。
 
@@ -294,7 +294,7 @@ int *sol = (int *)malloc(2 * sizeof *sol);
 
 ---
 
-### 3.3 struct Node *hashTable[] vs struct Node **hashTable
+### 3.3 `struct Node *hashTable[]` vs `struct Node **hashTable`
 
 這兩種在**函式參數中等價**。
 
@@ -335,7 +335,7 @@ struct Node **
 
 ---
 
-### 3.4 {0} 的意思
+### 3.4 `{0}` 的意思
 
 ```c
 struct Node *hashTable[TABLE_SIZE] = {0};
@@ -354,7 +354,7 @@ struct Node *hashTable[TABLE_SIZE] = {0};
 
 ---
 
-### 3.5 為什麼要做 malloc 失敗檢查
+### 3.5 為什麼要做 `malloc` 失敗檢查
 
 因為 C 不會幫你自動處理記憶體錯誤。
 
