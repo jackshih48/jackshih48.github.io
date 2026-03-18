@@ -5,17 +5,82 @@ title: Data Structure
 
 # Data Structure
 
+<style>
+  .ds-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .ds-panel h2 {
+    margin-top: 0;
+  }
+
+  #file-tree ul {
+    list-style: none;
+    padding-left: 18px;
+    margin: 6px 0;
+  }
+
+  #file-tree li {
+    margin: 6px 0;
+  }
+
+  #file-tree summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .file-btn {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    color: #0969da;
+    text-align: left;
+    font: inherit;
+  }
+
+  #code-title {
+    word-break: break-all;
+  }
+
+  #code-viewer {
+    background: #f6f8fa;
+    padding: 16px;
+    border-radius: 8px;
+    overflow: auto;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    min-height: 400px;
+  }
+
+  #code-viewer code {
+    background: transparent !important;
+    padding: 0 !important;
+    border: 0 !important;
+    color: inherit;
+  }
+
+  @media (max-width: 900px) {
+    .ds-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
 <p>左邊是檔案列表，點一下就能看 code。</p>
 
-<div style="display: grid; grid-template-columns: 320px 1fr; gap: 24px; align-items: start;">
-  <div>
+<div class="ds-layout">
+  <div class="ds-panel">
     <h2>檔案列表</h2>
     <div id="file-tree">載入中...</div>
   </div>
 
-  <div>
+  <div class="ds-panel">
     <h2 id="code-title">Code Preview</h2>
-    <pre id="code-viewer" style="background:#f6f8fa; padding:16px; border-radius:8px; overflow:auto; white-space:pre-wrap; line-height:1.5; min-height:400px;"><code>請先點左邊檔案</code></pre>
+    <pre id="code-viewer"><code>請先點左邊檔案</code></pre>
   </div>
 </div>
 
@@ -25,7 +90,6 @@ const REPO = "jackshih48.github.io";
 const BRANCH = "main";
 const TARGET_DIR = "data_structures";
 
-// 想顯示的副檔名
 const ALLOW_EXT = [".c", ".h", ".cpp", ".hpp", ".py", ".java", ".txt", ".md"];
 
 function escapeHtml(str) {
@@ -64,8 +128,6 @@ function buildTree(paths) {
 
 function renderTree(node, container) {
   const ul = document.createElement("ul");
-  ul.style.listStyle = "none";
-  ul.style.paddingLeft = "18px";
 
   const keys = Object.keys(node).sort((a, b) => {
     const aIsFile = !!node[a].__file;
@@ -76,18 +138,11 @@ function renderTree(node, container) {
 
   for (const key of keys) {
     const li = document.createElement("li");
-    li.style.margin = "6px 0";
 
     if (node[key].__file) {
       const btn = document.createElement("button");
       btn.textContent = key;
-      btn.style.border = "none";
-      btn.style.background = "none";
-      btn.style.padding = "0";
-      btn.style.cursor = "pointer";
-      btn.style.color = "#0969da";
-      btn.style.textAlign = "left";
-      btn.style.font = "inherit";
+      btn.className = "file-btn";
       btn.onclick = () => loadCode(node[key].path);
       li.appendChild(btn);
     } else {
@@ -96,8 +151,6 @@ function renderTree(node, container) {
 
       const summary = document.createElement("summary");
       summary.textContent = key;
-      summary.style.cursor = "pointer";
-      summary.style.fontWeight = "600";
       details.appendChild(summary);
 
       renderTree(node[key], details);
