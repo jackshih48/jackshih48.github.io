@@ -6,17 +6,6 @@ title: Data Structure
 # Data Structure
 
 <style>
-  .ds-layout {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 24px;
-    align-items: start;
-  }
-
-  .ds-panel h2 {
-    margin-top: 0;
-  }
-
   #file-tree ul {
     list-style: none;
     padding-left: 18px;
@@ -32,57 +21,19 @@ title: Data Structure
     font-weight: 600;
   }
 
-  .file-btn {
-    border: none;
-    background: none;
-    padding: 0;
-    cursor: pointer;
+  .file-link {
     color: #0969da;
-    text-align: left;
-    font: inherit;
+    text-decoration: none;
   }
 
-  #code-title {
-    word-break: break-all;
-  }
-
-  #code-viewer {
-    background: #f6f8fa;
-    padding: 16px;
-    border-radius: 8px;
-    overflow: auto;
-    white-space: pre-wrap;
-    line-height: 1.5;
-    min-height: 400px;
-  }
-
-  #code-viewer code {
-    background: transparent !important;
-    padding: 0 !important;
-    border: 0 !important;
-    color: inherit;
-  }
-
-  @media (max-width: 900px) {
-    .ds-layout {
-      grid-template-columns: 1fr;
-    }
+  .file-link:hover {
+    text-decoration: underline;
   }
 </style>
 
-<p>左邊是檔案列表，點一下就能看 code。</p>
+<p>點檔名後會直接跳到該檔案頁面。</p>
 
-<div class="ds-layout">
-  <div class="ds-panel">
-    <h2>檔案列表</h2>
-    <div id="file-tree">載入中...</div>
-  </div>
-
-  <div class="ds-panel">
-    <h2 id="code-title">Code Preview</h2>
-    <pre id="code-viewer"><code>請先點左邊檔案</code></pre>
-  </div>
-</div>
+<div id="file-tree">載入中...</div>
 
 <script>
 const OWNER = "jackshih48";
@@ -91,13 +42,6 @@ const BRANCH = "main";
 const TARGET_DIR = "data_structures";
 
 const ALLOW_EXT = [".c", ".h", ".cpp", ".hpp", ".py", ".java", ".txt", ".md"];
-
-function escapeHtml(str) {
-  return str
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;");
-}
 
 function isAllowedFile(path) {
   return ALLOW_EXT.some(ext => path.toLowerCase().endsWith(ext));
@@ -140,11 +84,11 @@ function renderTree(node, container) {
     const li = document.createElement("li");
 
     if (node[key].__file) {
-      const btn = document.createElement("button");
-      btn.textContent = key;
-      btn.className = "file-btn";
-      btn.onclick = () => loadCode(node[key].path);
-      li.appendChild(btn);
+      const a = document.createElement("a");
+      a.textContent = key;
+      a.className = "file-link";
+      a.href = "/" + node[key].path;
+      li.appendChild(a);
     } else {
       const details = document.createElement("details");
       details.open = true;
@@ -161,25 +105,6 @@ function renderTree(node, container) {
   }
 
   container.appendChild(ul);
-}
-
-async function loadCode(path) {
-  const codeTitle = document.getElementById("code-title");
-  const codeViewer = document.getElementById("code-viewer");
-
-  codeTitle.textContent = path;
-  codeViewer.innerHTML = "<code>載入中...</code>";
-
-  const rawUrl = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${path}`;
-
-  try {
-    const res = await fetch(rawUrl);
-    if (!res.ok) throw new Error("讀取失敗");
-    const text = await res.text();
-    codeViewer.innerHTML = `<code>${escapeHtml(text)}</code>`;
-  } catch (err) {
-    codeViewer.innerHTML = `<code>載入失敗：${escapeHtml(String(err))}</code>`;
-  }
 }
 
 async function loadFileTree() {
