@@ -1,4 +1,4 @@
-/* Using stack to implement parentheses balance check */
+/* Using stack to implement '(' & ')' balance check */
 
 #include <stdio.h>
 #include <stdlib.h>
