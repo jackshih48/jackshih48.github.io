@@ -22,7 +22,7 @@ title: Jack Shih的專案與研究筆記
 ---
 
 ## 💻 Programming
-- [C](/c_practice)
+- [C](/kr_c/code)
 - [Data Structure](/data_structures)
 - [MCU](/ESP32): [DEMO](https://www.youtube.com/shorts/Nv46WCSDo_0)
 - [LeetCode](/leetcode/)
