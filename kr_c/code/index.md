@@ -61,7 +61,7 @@ function insertPath(tree, parts, fullPath) {
 function buildTree(paths) {
   const tree = {};
   for (const path of paths) {
-    const relative = path.replace(/^kr_c/code\//, "");
+    const relative = path.replace(/^kr_c\/code\//, "");
     const parts = relative.split("/");
     insertPath(tree, parts, path);
   }
