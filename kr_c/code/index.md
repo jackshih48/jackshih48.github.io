@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Data Structure
+title: K&R C Book
 ---
 
 <style>
@@ -37,7 +37,7 @@ title: Data Structure
 const OWNER = "jackshih48";
 const REPO = "jackshih48.github.io";
 const BRANCH = "main";
-const TARGET_DIR = "data_structures";
+const TARGET_DIR = "kr_c/code";
 
 const ALLOW_EXT = [".c", ".h", ".cpp", ".hpp", ".py", ".java", ".txt", ".md"];
 
@@ -61,7 +61,7 @@ function insertPath(tree, parts, fullPath) {
 function buildTree(paths) {
   const tree = {};
   for (const path of paths) {
-    const relative = path.replace(/^data_structures\//, "");
+    const relative = path.replace(/^kr_c/code\//, "");
     const parts = relative.split("/");
     insertPath(tree, parts, path);
   }
