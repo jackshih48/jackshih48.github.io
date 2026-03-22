@@ -3,7 +3,7 @@ layout: math
 title: 線性代數核心筆記：特徵值分解 (EVD) 與奇異值分解 (SVD)
 ---
 
-# 線性代數筆記：特徵值分解 (EVD) 與奇異值分解 (SVD)
+# 線性代數核心筆記：特徵值分解 (EVD) 與奇異值分解 (SVD)
 
 ## 一、 特徵值分解 (Eigenvalue Decomposition, EVD)
 
@@ -23,13 +23,14 @@ $$
 A \begin{bmatrix} | & & | \\ \boldsymbol{v}_1 & \dots & \boldsymbol{v}_n \\ | & & | \end{bmatrix} = \begin{bmatrix} | & & | \\ \lambda_1\boldsymbol{v}_1 & \dots & \lambda_n\boldsymbol{v}_n \\ | & & | \end{bmatrix}
 $$
 
-令 $V$ 為特徵向量組成的矩陣，$\Lambda$ 為特徵值組成的對角矩陣，原式可改寫為 $AV = V\Lambda$。由於 $V$ 的行向量線性獨立，$V^{-1}$ 必然存在，同乘 $V^{-1}$ 即得到 **EVD 的一般定義**：
+令 $V$ 為特徵向量組成的矩陣，$\Lambda$ 為特徵值組成的對角矩陣，原式可改寫為 $AV = V\Lambda$。由於 $V$ 的行向量線性獨立，$V^{-1}$ 必然存在，同乘 $V^{-1}$ 即得到 EVD 的一般定義：
 
 $$
 A = V \Lambda V^{-1}
 $$
 
-**實對稱矩陣的正交對角化：**  
+#### 實對稱矩陣的正交對角化
+
 若 $A$ 為實對稱矩陣 ($A = A^T$)，根據譜定理 (Spectral Theorem)，其特徵值皆為實數，且特徵向量必可選為彼此正交的單位向量。此時 $V$ 為正交矩陣 (Orthogonal Matrix)，習慣記為 $Q$。因正交矩陣滿足 $Q^{-1} = Q^T$，分解式可簡化為：
 
 $$
@@ -56,23 +57,24 @@ $$
 A = \lambda_1\boldsymbol{q}_1\boldsymbol{q}_1^T + \lambda_2\boldsymbol{q}_2\boldsymbol{q}_2^T + \dots + \lambda_n\boldsymbol{q}_n\boldsymbol{q}_n^T = \sum_{i=1}^n \lambda_i\boldsymbol{q}_i\boldsymbol{q}_i^T
 $$
 
-**外積的代數與物理意義：**  
+#### 外積的代數與物理意義
+
 矩陣 $\boldsymbol{q}_i\boldsymbol{q}_i^T$ 為一外積矩陣。當其作用於空間中任意向量 $\boldsymbol{x}$ 時：
 
 $$
 (\boldsymbol{q}_i\boldsymbol{q}_i^T)\boldsymbol{x} = \boldsymbol{q}_i(\boldsymbol{q}_i^T\boldsymbol{x})
 $$
 
-由於 $\boldsymbol{q}_i^T\boldsymbol{x}$ 為內積純量，代表 $\boldsymbol{x}$ 在 $\boldsymbol{q}_i$ 方向上的投影長度。因此，$\boldsymbol{q}_i\boldsymbol{q}_i^T$ 為一**投影運算子 (Projection Operator)**，負責將向量投影至 $\boldsymbol{q}_i$ 方向，而 $\lambda_i$ 則控制該投影方向的縮放尺度。
+由於 $\boldsymbol{q}_i^T\boldsymbol{x}$ 為內積純量，代表 $\boldsymbol{x}$ 在 $\boldsymbol{q}_i$ 方向上的投影長度。因此，$\boldsymbol{q}_i\boldsymbol{q}_i^T$ 為一投影運算子 (Projection Operator)，負責將向量投影至 $\boldsymbol{q}_i$ 方向，而 $\lambda_i$ 則控制該投影方向的縮放尺度。
 
 ### 3. 矩陣的雙重幾何視角
 
 給定方陣 $A \in \mathbb{R}^{n \times n}$，可依據數學情境被詮釋為兩種截然不同的物件：
 
-- **視角一：作為線性算子 (Linear Operator)**  
+- 視角一：作為線性算子 (Linear Operator)  
   矩陣 $A$ 視為映射函數 $T(\boldsymbol{x}) = A\boldsymbol{x}$，代表空間變換的「動作」。EVD ($A = Q \Lambda Q^T$) 將此變換拆解為三步驟：首先透過 $Q^T$ 將座標軸旋轉至特徵向量基底，接著透過 $\Lambda$ 於各基底軸上獨立縮放，最後透過 $Q$ 旋轉回原座標系。
 
-- **視角二：作為資料紀錄與二次型 (Quadratic Form)**  
+- 視角二：作為資料紀錄與二次型 (Quadratic Form)  
   若 $A = A^T$，矩陣 $A$ 可視為空間中測量能量或距離的「度量」，用來「紀錄」某個幾何形狀的特徵。給定二次型 $q(\boldsymbol{x}) = \boldsymbol{x}^T A \boldsymbol{x}$，代入 EVD：
 
 $$
@@ -85,7 +87,7 @@ $$
 \boldsymbol{y}^T \Lambda \boldsymbol{y} = \sum_{i=1}^n \lambda_i y_i^2 = c
 $$
 
-**幾何結論**：EVD 解耦了二次型中的交叉項，將 $A$ 內含的幾何資料提取出來。正交矩陣 $Q$ 的行向量紀錄了二次曲面（如橢球）的**主軸方向**；特徵值 $\lambda_i$ 紀錄了沿主軸的**曲率或尺度**（半徑 $r_i \propto 1/\sqrt{\lambda_i}$）。
+幾何結論：EVD 解耦了二次型中的交叉項，將 $A$ 內含的幾何資料提取出來。正交矩陣 $Q$ 的行向量紀錄了二次曲面（如橢球）的主軸方向；特徵值 $\lambda_i$ 紀錄了沿主軸的曲率或尺度（半徑 $r_i \propto 1/\sqrt{\lambda_i}$）。
 
 ---
 
@@ -93,7 +95,8 @@ $$
 
 ### 1. SVD 幾何存在性定理
 
-對於任意線性變換 $M: \mathbb{R}^n \to \mathbb{R}^m$，必定存在一組定義於輸入空間的正交基底 $\boldsymbol{v}_1, \dots, \boldsymbol{v}_n$，使得它們經過 $M$ 映射後，在輸出空間中產生的一組向量 $M\boldsymbol{v}_1, \dots, M\boldsymbol{v}_n$ **依然保持正交**。  
+對於任意線性變換 $M: \mathbb{R}^n \to \mathbb{R}^m$，必定存在一組定義於輸入空間的正交基底 $\boldsymbol{v}_1, \dots, \boldsymbol{v}_n$，使得它們經過 $M$ 映射後，在輸出空間中產生的一組向量 $M\boldsymbol{v}_1, \dots, M\boldsymbol{v}_n$ 依然保持正交。
+
 將映射後的正交向量正規化，即可得到輸出空間的正交基底 $\boldsymbol{u}_i$，其映射關係為：
 
 $$
@@ -110,9 +113,9 @@ $$
 M = U \Sigma V^T
 $$
 
-- **$U \in \mathbb{R}^{m \times m}$ (左奇異向量矩陣)**：為正交矩陣，其行向量 $\boldsymbol{u}_i$ 構成輸出空間的正交基底。
-- **$V \in \mathbb{R}^{n \times n}$ (右奇異向量矩陣)**：為正交矩陣，其行向量 $\boldsymbol{v}_i$ 構成輸入空間的正交基底。
-- **$\Sigma \in \mathbb{R}^{m \times n}$ (奇異值矩陣)**：為對角矩陣，對角線元素為奇異值 $\sigma_i$（且 $\sigma_1 \geq \sigma_2 \geq \dots \geq 0$）。
+- $U \in \mathbb{R}^{m \times m}$ (左奇異向量矩陣)：為正交矩陣，其行向量 $\boldsymbol{u}_i$ 構成輸出空間的正交基底。
+- $V \in \mathbb{R}^{n \times n}$ (右奇異向量矩陣)：為正交矩陣，其行向量 $\boldsymbol{v}_i$ 構成輸入空間的正交基底。
+- $\Sigma \in \mathbb{R}^{m \times n}$ (奇異值矩陣)：為對角矩陣，對角線元素為奇異值 $\sigma_i$（且 $\sigma_1 \geq \sigma_2 \geq \dots \geq 0$）。
 
 ### 3. SVD 與 $M^TM$、$MM^T$ 的代數證明
 
@@ -136,12 +139,12 @@ $$
 
 上式符合實對稱矩陣 $M^TM$ 的 EVD 形式 ($A = Q \Lambda Q^T$)。同理可推導 $MM^T = U \Sigma^2 U^T$。
 
-**代數結論與 Rank 定理：**
+#### 代數結論與 Rank 定理
 
 1. 矩陣 $V$ 的行向量 (columns) 即為 $M^TM$ 的特徵向量。
 2. 矩陣 $U$ 的行向量 (columns) 即為 $MM^T$ 的特徵向量。
 3. 奇異值的平方 $\sigma_i^2$ 同時是 $M^TM$ 與 $MM^T$ 的非零特徵值，亦即 $\sigma_i = \sqrt{\lambda_i(M^T M)} = \sqrt{\lambda_i(MM^T)}$。
-4. **Rank 定理**：矩陣 $M$ 的秩 (Rank) $r$，恰好等於其大於零的非零奇異值個數。
+4. Rank 定理：矩陣 $M$ 的秩 (Rank) $r$，恰好等於其大於零的非零奇異值個數。
 
 ### 4. 矩陣維度與 Reduced SVD 外積和展開
 
@@ -155,7 +158,7 @@ $$
 
 由於對角矩陣 $\Sigma$ 中僅前 $r$ 個對角元為非零值，與其相乘的 $U$ 的後 $m-r$ 個行向量，以及 $V$ 的後 $n-r$ 個列向量，在乘法過程中皆會被零消去（對應至矩陣的零空間 Null Space）。
 
-因此，可捨棄所有對應為 $0$ 的無效向量，將原分解精簡為 **Reduced SVD (截斷奇異值分解 / Rank-r Decomposition)**，並改寫為秩為 1 的外積和形式：
+因此，可捨棄所有對應為 $0$ 的無效向量，將原分解精簡為 Reduced SVD (截斷奇異值分解 / Rank-r Decomposition)，並改寫為秩為 1 的外積和形式：
 
 $$
 M = \sum_{i=1}^r \sigma_i \boldsymbol{u}_i \boldsymbol{v}_i^T
@@ -167,4 +170,4 @@ $$
 M\boldsymbol{x} = \sum_{i=1}^r \sigma_i \boldsymbol{u}_i (\boldsymbol{v}_i^T \boldsymbol{x})
 $$
 
-**物理意義**：此式表達了變換過程：將輸入向量投影至基底 $\boldsymbol{v}_i$ 獲取分量（內積純量），依權重 $\sigma_i$ 進行縮放，最後將該純量沿著輸出空間的基底 $\boldsymbol{u}_i$ 方向映射。任何秩為 $r$ 的矩陣，皆可解構為這 $r$ 個一維變換的線性疊加。
+物理意義：此式表達了變換過程：將輸入向量投影至基底 $\boldsymbol{v}_i$ 獲取分量（內積純量），依權重 $\sigma_i$ 進行縮放，最後將該純量沿著輸出空間的基底 $\boldsymbol{u}_i$ 方向映射。任何秩為 $r$ 的矩陣，皆可解構為這 $r$ 個一維變換的線性疊加。
