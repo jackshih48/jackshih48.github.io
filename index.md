@@ -8,7 +8,7 @@ title: Jack Shih的專案與研究筆記
 
 ---
 ## My Note
-- [線性代數：EVD 與 SVD](./linear_algebra/evd_svd.html)
+- [線性代數：EVD 與 SVD](./linear_algebra/evd_svd.md)
 
 ---
 
