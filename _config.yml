@@ -6,7 +6,7 @@ baseurl: ""               # user/organization site 留空
 
 # 顯示在導覽列的頁面（minima 用這個）
 header_pages:
-  - note.md         # Home 會自動指到 index.md
+  - index.md         # Home 會自動指到 index.md
 
 # GitHub Pages 內建支援的主題
 theme: minima
