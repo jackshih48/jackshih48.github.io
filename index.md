@@ -7,6 +7,10 @@ title: Jack Shih的專案與研究筆記
 這裡整理了我在 Overleaf 上撰寫的筆記、專案，方便自己回顧，也能分享給別人。
 
 ---
+## My Note
+- [線性代數：EVD 與 SVD](./linear_algebra/evd_svd.html)
+
+---
 
 ## 🛰 Communication Background
 - [Adaptive Signal Processing](https://www.overleaf.com/read/crshsdffjjnk#3f3187)
