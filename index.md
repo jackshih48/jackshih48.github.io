@@ -19,10 +19,10 @@ title: Jack Shih的專案與研究筆記
 ---
 
 ## 📡 Radio Channel Model
-- [Large Scale Fading](./communication/large_scale_fading.pdf)
-- [Small Scale Fading](./communication/small_scale_fading.pdf)
-- [OFDM](./communication/OFDM.pdf)
-- [Diversity](./communication/diversity.pdf)
+- [Large Scale Fading](/communication/large_scale_fading.pdf)
+- [Small Scale Fading](/communication/small_scale_fading.pdf)
+- [OFDM](/communication/OFDM.pdf)
+- [Diversity](/communication/diversity.pdf)
 
 ---
 
