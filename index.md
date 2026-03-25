@@ -1,14 +1,13 @@
 ---
 layout: page
-title: Jack Shih的專案與研究筆記
+title: Jack Shih's Blog
 ---
 
-歡迎來到我的筆記作品集頁面 👋  
-這裡整理了我在 Overleaf 上撰寫的筆記、專案，方便自己回顧，也能分享給別人。
+Welcome~ 👋  
 
 ---
 ## Articles
-- [線性代數：EVD 與 SVD](./linear_algebra/evd_svd.md)
+- [Linear Algebra：EVD & SVD](./linear_algebra/evd_svd.md)
 
 ---
 
