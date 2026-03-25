@@ -7,22 +7,27 @@ title: Jack Shih的專案與研究筆記
 這裡整理了我在 Overleaf 上撰寫的筆記、專案，方便自己回顧，也能分享給別人。
 
 ---
-## My Note
+## Articles
 - [線性代數：EVD 與 SVD](./linear_algebra/evd_svd.md)
 
 ---
 
-## 🛰 Communication Background
-- [Adaptive Signal Processing](https://www.overleaf.com/read/crshsdffjjnk#3f3187)
-- [Information Theory](https://www.overleaf.com/read/wbswrsfmdvyx#f8b14f)
+## 🛰 Communication Notes
+
+- [Adaptive Signal Processing](/communication/Adaptive_Signal_Processing.pdf)
+- [Information Theory](/communication/Information_Theory.pdf)
+- [Large Scale Fading](/communication/large_scale_fading.pdf)
+- [Small Scale Fading](/communication/small_scale_fading.pdf)
+- [Diversity](/communication/diversity.pdf)
 
 ---
 
-## 📡 Radio Channel Model
-- [Large Scale Fading](/communication/large_scale_fading.pdf)
-- [Small Scale Fading](/communication/small_scale_fading.pdf)
+## 📡 Simulations
+
+- [BPSK](/communication/bpsk_sim.pdf)
+- [Rayleigh Fading Channel](/communication/fading_sim.pdf)
 - [OFDM](/communication/OFDM.pdf)
-- [Diversity](/communication/diversity.pdf)
+
 
 ---
 
