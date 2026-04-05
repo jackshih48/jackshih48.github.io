@@ -59,7 +59,7 @@ $$
 
 $$
 \boxed{
-\text{點 } P \longleftrightarrow \text{直線 } \ell_P
+\text{極點 } P \longleftrightarrow \text{極線 } \ell_P
 }
 $$
 
