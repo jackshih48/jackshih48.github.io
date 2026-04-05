@@ -1,9 +1,9 @@
 ---
 layout: math
-title: 線性代數核心筆記：特徵值分解 (EVD) 與奇異值分解 (SVD)
+title: 線性代數筆記：特徵值分解 (EVD) 與奇異值分解 (SVD)
 ---
 
-# 線性代數核心筆記：特徵值分解 (EVD) 與奇異值分解 (SVD)
+# 線性代數筆記：特徵值分解 (EVD) 與奇異值分解 (SVD)
 
 ## 一、 特徵值分解 (Eigenvalue Decomposition, EVD)
 

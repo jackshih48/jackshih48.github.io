@@ -8,6 +8,7 @@ Welcome~ 👋
 ---
 ## Articles
 - [Linear Algebra：EVD & SVD](./linear_algebra/evd_svd.md)
+- [Math: Tangent line for all conic sections](./linear_algebra/quadratic_tangent.md)
 
 ---
 
