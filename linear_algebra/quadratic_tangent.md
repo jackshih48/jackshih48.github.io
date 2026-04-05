@@ -14,15 +14,15 @@ $$
 ax^2 + bxy + cy^2 + dx + ey + f = 0.
 $$
 
-若我們想求這個二次曲線圖形過點 $P(x_0, y_0)$ 的切線方程式，透過「變數換一半」的代換口訣可以快速得到。具體代換規則如下：
+若我們想求這個二次曲線圖形過點 $P(x_0, y_0)$ 的切線方程式，透過「一半的變數換常數」的代換口訣可以快速得到。具體代換規則如下：
 
 $$
 \begin{aligned}
 x^2 &\rightarrow x_0x \\
 y^2 &\rightarrow y_0y \\
-xy  &\rightarrow \frac{x_0y + xy_0}{2} \\
-x   &\rightarrow \frac{x + x_0}{2} \\
-y   &\rightarrow \frac{y + y_0}{2}
+xy = \frac{xy + xy}{2} &\rightarrow \frac{x_0y + xy_0}{2} \\
+x = \frac{x + x}{2}   &\rightarrow \frac{x + x_0}{2} \\
+y = \frac{y + y}{2} &\rightarrow \frac{y + y_0}{2}
 \end{aligned}
 $$
 
