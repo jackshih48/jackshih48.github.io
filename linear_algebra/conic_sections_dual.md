@@ -209,7 +209,7 @@ $$
 $$
 \mathbf{X}_0=
 \begin{bmatrix}
-x_0\\y_0\\z_0
+x_0\\y_0\\1
 \end{bmatrix}
 $$
 
@@ -232,14 +232,14 @@ $$
 $$
 \mathbf{L}=
 \begin{bmatrix}
-u\\v\\w
+u\\v\\1
 \end{bmatrix}
 $$
 
 則其方程式為
 
 $$
-u x+v y+w z=0
+u x+v y+z=0
 $$
 
 亦即
