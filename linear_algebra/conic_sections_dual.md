@@ -140,7 +140,7 @@ $$
 由極線方程式可知，點 $\mathbf{x}_0$ 對應到極線的法向量為
 
 $$
-2A\mathbf{x}_0+\mathbf{b}
+A \mathbf{x}_0 + \frac{1}{2} \mathbf{b}
 $$
 
 若反過來給定一直線，想求其極點 $\mathbf{x}_0$，便需要反解矩陣 $A$。  
