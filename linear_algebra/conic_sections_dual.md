@@ -20,9 +20,7 @@ $$
 若取平面上一點 $P(\mathbf{x}_0)$，則透過"換一半"公式(即極線公式)可對應到一直線：
 
 $$
-\boxed{
 \mathbf{x}_0^T A\mathbf{x}+\mathbf{b}^T\frac{\mathbf{x}+\mathbf{x}_0}{2}+f=0
-}
 $$
 
 稱為極點$P$所對應的極線。
