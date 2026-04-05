@@ -127,16 +127,14 @@ $$
 \nabla f(\mathbf{x}) = 2A\mathbf{x} + \mathbf{b}
 $$
 
-在切點 $P(\mathbf{x}_0)$ 上，切線的法向量為 $\mathbf{n} = 2A\mathbf{x}_0 + \mathbf{b}$。 所以切線方程式為：
+在切點 $P(\mathbf{x}_0)$ 上，切線的法向量為 $2A\mathbf{x}_0 + \mathbf{b}$。 所以切線方程式為：
 
 $$
-\mathbf{n}^T (\mathbf{x} - \mathbf{x}_0) = 0
-$$
-
-展開並利用 $A$ 為對稱矩陣：
-
-$$
+\begin{aligned}
+(2A\mathbf{x}_0 + \mathbf{b})^T (\mathbf{x} - \mathbf{x}_0) = 0 \\
+2\mathbf{x}_0^T A \mathbf{x} - 2\mathbf{x}_0^T A^T \mathbf{x}_0 + \mathbf{b}^T \mathbf{x} - \mathbf{b}^T \mathbf{x}_0 = 0 \\
 2\mathbf{x}_0^T A \mathbf{x} - 2\mathbf{x}_0^T A \mathbf{x}_0 + \mathbf{b}^T \mathbf{x} - \mathbf{b}^T \mathbf{x}_0 = 0
+\end{aligned}
 $$
 
 由於切點 $P(\mathbf{x}_0)$ 在曲線上，必滿足原方程式 $\mathbf{x}_0^T A \mathbf{x}_0 + \mathbf{b}^T \mathbf{x}_0 + f = 0$，得:
