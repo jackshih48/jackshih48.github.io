@@ -169,4 +169,4 @@ $$
 <br>
 
 ## 相關文章
-[Duality in Quadratic Curves](./linear_algebra/conic_sections_dual.md)
+[Duality in Quadratic Curves](./conic_sections_dual.md)
