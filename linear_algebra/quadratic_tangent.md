@@ -117,14 +117,14 @@ $$
 二次函數也可用矩陣形式表示:
 
 $$
-f(x, y) = ax^2 + bxy + cy^2 + dx + ey + f = 0
+F(x, y) = ax^2 + bxy + cy^2 + dx + ey + f = 0
 $$
 
 可改寫為
 
 $$
 \boxed{
-f(\mathbf{x}) = \mathbf{x}^T A \mathbf{x} + \mathbf{b}^T \mathbf{x} + f = 0
+F(\mathbf{x}) = \mathbf{x}^T A \mathbf{x} + \mathbf{b}^T \mathbf{x} + f = 0
 }
 $$
 
@@ -139,7 +139,7 @@ $$
 對 $\mathbf{x}$ 取梯度（偏微分），可求出圖形在任意點 $\mathbf{x}$ 的法向量：
 
 $$
-\nabla f(\mathbf{x}) = 2A\mathbf{x} + \mathbf{b}
+\nabla F(\mathbf{x}) = 2A\mathbf{x} + \mathbf{b}
 $$
 
 在切點 $P(\mathbf{x}_0)$ 上，切線的法向量為 $2A\mathbf{x}_0 + \mathbf{b}$。 所以切線方程式為：
