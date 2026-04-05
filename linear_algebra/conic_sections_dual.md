@@ -330,5 +330,6 @@ $$
 
 <br>
 
-<img src="./conic_sections_dual.png" alt="Dual of Ellipse" width="500">.
+<img src="./conic_sections_dual.png" alt="Dual of Ellipse" width="500">
+
 Img: Dual of Ellipse.
