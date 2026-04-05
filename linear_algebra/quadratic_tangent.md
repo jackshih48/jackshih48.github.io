@@ -168,5 +168,5 @@ $$
 
 <br>
 
-## 延伸
+## 相關文章
 [Duality in Quadratic Curves](./linear_algebra/conic_sections_dual.md)
