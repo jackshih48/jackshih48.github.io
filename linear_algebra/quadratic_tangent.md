@@ -14,12 +14,12 @@ $$
 ax^2 + bxy + cy^2 + dx + ey + f = 0.
 $$
 
-若我們想求這個二次曲線圖形過點 $P(x_0, y_0)$ 的切線方程式，透過「一半的變數換常數」的代換口訣可以快速得到。具體代換規則如下：
+若我們想求這個二次曲線圖形過點 $P(x_0, y_0)$ 的切線方程式，透過「換一半」、「一半的變數換常數」的代換口訣可以快速得到。具體代換規則如下：
 
 $$
 \begin{aligned}
-x^2 &\rightarrow x_0x \\
-y^2 &\rightarrow y_0y \\
+x^2 = xx &\rightarrow x_0x \\
+y^2 = yy &\rightarrow y_0y \\
 xy = \frac{xy + xy}{2} &\rightarrow \frac{x_0y + xy_0}{2} \\
 x = \frac{x + x}{2}   &\rightarrow \frac{x + x_0}{2} \\
 y = \frac{y + y}{2} &\rightarrow \frac{y + y_0}{2}
@@ -32,10 +32,10 @@ $$
 axx_0 + b\frac{x_0y + xy_0}{2} + cyy_0 + d\frac{x + x_0}{2} + e\frac{y + y_0}{2} + f = 0.
 $$
 
-例如，圓 $x^2 + y^2 = r^2$ 的切線方程式為（若 $P(x_0, y_0)$ 在圓上）：
+例如，圓 $(x-h)^2 + (y-k)^2 = r^2$ 的切線方程式為（若 $P(x_0, y_0)$ 在圓上）：
 
 $$
-xx_0 + yy_0 = r^2.
+(x_0-h)(x-h) + (y_0-k)(y-k) = r^2.
 $$
 
 ## 證明
