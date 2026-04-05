@@ -14,7 +14,7 @@ $$
 ax^2 + bxy + cy^2 + dx + ey + f = 0.
 $$
 
-若我們想求這個二次曲線圖形過點 $P(x_0, y_0)$ 的切線方程式，透過「兩個變數，一個不變，一個代點」的代換口訣可以快速得到。具體代換規則如下：
+若我們想求這個二次曲線圖形過點 $P(x_0, y_0)$ 的切線方程式，透過「變數換一半」的代換口訣可以快速得到。具體代換規則如下：
 
 $$
 \begin{aligned}
@@ -104,14 +104,57 @@ $$
 二次函數也可用矩陣形式表示:
 
 $$
-f(x, y) = ax^2 + bxy + cy^2 + dx + ey + f = 0.
+f(x, y) = ax^2 + bxy + cyy^2 + dx + ey + f = 0.
 $$
 
 可改寫為
 
 $$
-f(\mathbb{x}) = 
+f(\mathbf{x}) = \mathbf{x}^T A \mathbf{x} + \mathbf{b}^T \mathbf{x} + f = 0
 $$
 
-對 $\mathbb{x}$ 偏微分
+其中
 
+$$
+\mathbf{x} = \begin{bmatrix} x \\ y \end{bmatrix}, \quad
+A = \begin{bmatrix} a & \frac{b}{2} \\ \frac{b}{2} & c \end{bmatrix}, \quad
+\mathbf{b} = \begin{bmatrix} d \\ e \end{bmatrix}
+$$
+
+對 $\mathbf{x}$ 取梯度（偏微分），可求出圖形在任意點 $\mathbf{x}$ 的法向量：
+
+$$
+\nabla f(\mathbf{x}) = 2A\mathbf{x} + \mathbf{b}
+$$
+
+在切點 $P(\mathbf{x}_0)$ 上，切線的法向量為 $\mathbf{n} = 2A\mathbf{x}_0 + \mathbf{b}$。
+因為切線上任意動點 $\mathbf{x}$ 與切點構成的向量 $(\mathbf{x} - \mathbf{x}_0)$ 必定與法向量垂直（內積為零），所以切線方程式為：
+
+$$
+(2A\mathbf{x}_0 + \mathbf{b})^T (\mathbf{x} - \mathbf{x}_0) = 0
+$$
+
+展開並利用 $A$ 為對稱矩陣：
+
+$$
+2\mathbf{x}_0^T A \mathbf{x} - 2\mathbf{x}_0^T A \mathbf{x}_0 + \mathbf{b}^T \mathbf{x} - \mathbf{v}^T \mathbf{x}_0 = 0
+$$
+
+由於切點 $P(\mathbf{x}_0)$ 在曲線上，必滿足原方程式 $\mathbf{x}_0^T A \mathbf{x}_0 + \mathbf{b}^T \mathbf{x}_0 + k = 0$。
+將此式同乘 2 並移項得到 $-2\mathbf{x}_0^T M \mathbf{x}_0 = 2\mathbf{v}^T \mathbf{x}_0 + 2k$，代入上式中：
+
+$$
+2\mathbf{x}_0^T M \mathbf{x} + (2\mathbf{v}^T \mathbf{x}_0 + 2k) + \mathbf{v}^T \mathbf{x} - \mathbf{v}^T \mathbf{x}_0 = 0
+$$
+
+合併 $\mathbf{v}$ 的相關項：
+
+$$
+2\mathbf{x}_0^T M \mathbf{x} + \mathbf{v}^T (\mathbf{x} + \mathbf{x}_0) + 2k = 0
+$$
+
+等號兩邊同除以 2，即得到切線方程式：
+
+$$
+\mathbf{x}_0^T M \mathbf{x} + \mathbf{v}^T \frac{\mathbf{x} + \mathbf{x}_0}{2} + k = 0.
+$$
