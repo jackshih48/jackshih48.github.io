@@ -165,3 +165,6 @@ $$
 \mathbf{x}_0^T A \mathbf{x} + \mathbf{b}^T \frac{\mathbf{x} + \mathbf{x}_0}{2} + f = 0.
 }
 $$
+
+## 延伸
+[Duality in Quadratic Curves](./linear_algebra/conic_sections_dual.md)
