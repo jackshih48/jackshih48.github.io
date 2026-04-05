@@ -29,22 +29,33 @@ $$
 
 ## 對偶結構
 
-"換一半"公式，建立了點與線之間的對應關係:
+"換一半"公式，建立了極點到極線的對應關係:
 
 $$
 \mathbf{x}_0^T A\mathbf{x}+\mathbf{b}^T\frac{\mathbf{x}+\mathbf{x}_0}{2}+f=0
 $$
 
-可改寫為:
+若已知極線 $\mathbf{n}^T \mathbf{x} + k$，想反求極點。 先將原式改寫為
 
 $$
 \begin{aligned}
-(\mathbf{x}_0^T A+\mathbf{b}^T)\mathbf{x} + \frac{1}{2} \mathbf{b}^T\mathbf{x}_0 +f=0 \\
-(A \mathbf{x}_0 +\mathbf{b})^T \mathbf{x} + \frac{1}{2} \mathbf{b}^T\mathbf{x}_0 +f=0
+(\mathbf{x}_0^T A+ \frac{1}{2} \mathbf{b}^T)\mathbf{x} + \frac{1}{2} \mathbf{b}^T\mathbf{x}_0 +f=0 \\
+(A \mathbf{x}_0 + \frac{1}{2} \mathbf{b})^T \mathbf{x} + \frac{1}{2} \mathbf{b}^T\mathbf{x}_0 +f=0
 \end{aligned}
 $$ 
 
-若A可逆，對於平面上每一點，上述公式都給出一條對應直線，反之亦然：
+因此得到關係式:
+
+$$
+\begin{aligned}
+\mathbf{n} = A \mathbf{x}_0 + \frac{1}{2} \mathbf{b} \\
+k = \frac{1}{2} \mathbf{b}^T\mathbf{x}_0 + f
+\end{aligned}
+$$
+
+若 $A$ 可逆，可解出唯一的極點 $\mathbf{x}_0$。
+
+因此當 $A$ 可逆時，
 
 $$
 \boxed{
@@ -152,10 +163,14 @@ $$
 在仿射平面中，二次曲線為:
 
 $$
-F(\mathbf{x})=\mathbf{x}^T A\mathbf{x}+\mathbf{b}^T\mathbf{x}+f=0
+F(x,y)=ax^2 + bxy + cy^2 + dx + ey + f = 0
 $$
 
-若引入齊次座標
+若將每一項改寫為平方項:
+
+F(x, y, z)=ax^2 + bxy + cy^2 + dxz + eyz + fz^2 = 0
+
+因此原二次曲線為 $F(x, y, 1)$，也就是引入齊次座標:
 
 $$
 \mathbf{X}=
