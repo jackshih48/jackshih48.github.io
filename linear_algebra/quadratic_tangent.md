@@ -132,7 +132,7 @@ $$
 $$
 \begin{aligned}
 (2A\mathbf{x}_0 + \mathbf{b})^T (\mathbf{x} - \mathbf{x}_0) = 0 \\
-2\mathbf{x}_0^T A \mathbf{x} - 2\mathbf{x}_0^T A^T \mathbf{x}_0 + \mathbf{b}^T \mathbf{x} - \mathbf{b}^T \mathbf{x}_0 = 0 \\
+2\mathbf{x}_0^T A^T \mathbf{x} - 2\mathbf{x}_0^T A^T \mathbf{x}_0 + \mathbf{b}^T \mathbf{x} - \mathbf{b}^T \mathbf{x}_0 = 0 \\
 2\mathbf{x}_0^T A \mathbf{x} - 2\mathbf{x}_0^T A \mathbf{x}_0 + \mathbf{b}^T \mathbf{x} - \mathbf{b}^T \mathbf{x}_0 = 0
 \end{aligned}
 $$
@@ -146,5 +146,5 @@ $$
 等號兩邊同除以 2，即得到切線方程式：
 
 $$
-\mathbf{x}_0^T M \mathbf{x} + \mathbf{b}^T \frac{\mathbf{x} + \mathbf{x}_0}{2} + f = 0.
+\mathbf{x}_0^T A \mathbf{x} + \mathbf{b}^T \frac{\mathbf{x} + \mathbf{x}_0}{2} + f = 0.
 $$
