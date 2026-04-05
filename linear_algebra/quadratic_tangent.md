@@ -166,5 +166,7 @@ $$
 }
 $$
 
+<br>
+
 ## 延伸
 [Duality in Quadratic Curves](./linear_algebra/conic_sections_dual.md)
