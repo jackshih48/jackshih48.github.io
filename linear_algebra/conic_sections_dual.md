@@ -327,3 +327,5 @@ $$
 
 因此，二次曲線不僅可以看成點的軌跡，也可以看成切線的包絡。  
 這就是射影平面中二次曲線的對偶結構。
+
+![Dual of Ellipse](./conic_sections_dual.png)ual of Ellipse
