@@ -148,5 +148,5 @@ $$
 等號兩邊同除以 2，即得到切線方程式：
 
 $$
-\mathbf{x}_0^T M \mathbf{x} + \mathbf{v}^T \frac{\mathbf{x} + \mathbf{x}_0}{2} + f = 0.
+\mathbf{x}_0^T M \mathbf{x} + \mathbf{b}^T \frac{\mathbf{x} + \mathbf{x}_0}{2} + f = 0.
 $$
