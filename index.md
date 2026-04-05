@@ -14,7 +14,7 @@ Welcome~ 👋
 
 ### Conic Sections
 
-- [Tangent line for all quadratic curves](./linear_algebra/quadratic_tangent.md)
+- [Tangent Line for All Quadratic Curves](./linear_algebra/quadratic_tangent.md)
 - [Duality in Quadratic Curves](./linear_algebra/conic_sections_dual.md)
 
 ---
