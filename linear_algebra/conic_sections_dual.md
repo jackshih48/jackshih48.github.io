@@ -35,7 +35,7 @@ $$
 \mathbf{x}_0^T A\mathbf{x}+\mathbf{b}^T\frac{\mathbf{x}+\mathbf{x}_0}{2}+f=0
 $$
 
-若已知極線 $\mathbf{n}^T \mathbf{x} + k$，想反求極點。 先將原式改寫為
+若已知極線 $\mathbf{n}^T \mathbf{x} + k=0$，想反求極點。 先將原式改寫為
 
 $$
 \begin{aligned}
