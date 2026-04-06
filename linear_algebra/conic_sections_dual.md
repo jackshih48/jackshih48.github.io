@@ -254,15 +254,13 @@ $$
 \mathbf{L} = Q^T \mathbf{X}_0 = Q \mathbf{X}_0
 $$
 
-也就是點 $\mathbf{X}_0$ 的極線表示式:
+也就是點 $\mathbf{X}_0$ 的極線表示式由矩陣 $Q$ 給出:
 
 $$
 \boxed{
 \mathbf{L}=Q\mathbf{X}_0
 }
 $$
-
-由於$Q$是對稱矩陣，所以可逆。 因此，矩陣 $Q$ 給出極點與極線的一一對應關係。
 
 <br>
 
