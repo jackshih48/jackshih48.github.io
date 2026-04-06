@@ -173,11 +173,11 @@ $$
 $$
 \mathbf{X}=
 \begin{bmatrix}
-x\\y\\z
+x\\y\\1
 \end{bmatrix}
 $$
 
-則上式可寫成
+則原式可寫成
 
 $$
 \boxed{
