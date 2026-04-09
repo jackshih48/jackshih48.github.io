@@ -46,124 +46,29 @@ $$
 
 ## 證明
 
-由
+先由
+$$
+1=(x)'=(e^{\ln x})'=(e^{\ln x})(\ln x)'=x(\ln x)'
+$$
+得
+$$
+(\ln x)'=\frac{1}{x}.
+$$
 
+接著對
 $$
 f(x)=a(x-\alpha_1)(x-\alpha_2)\cdots(x-\alpha_k)
 $$
-
-兩邊取對數，可得
-
-$$
-\ln f(x)
-=
-\ln a+\ln(x-\alpha_1)+\ln(x-\alpha_2)+\cdots+\ln(x-\alpha_k).
-$$
-
-對上式兩邊微分，利用
-
-$$
-(\ln g(x))'=\frac{g'(x)}{g(x)}
-$$
-
-可得
-
-$$
-\frac{f'(x)}{f(x)}
-=
-\frac{1}{x-\alpha_1}
-+
-\frac{1}{x-\alpha_2}
-+\cdots+
-\frac{1}{x-\alpha_k}.
-$$
-
-接著將每一項改寫成關於 \(\frac{1}{x}\) 的形式：
-
-$$
-\frac{1}{x-\alpha_i}
-=
-\frac{1}{x\left(1-\frac{\alpha_i}{x}\right)}
-=
-\frac{1}{x}\cdot\frac{1}{1-\frac{\alpha_i}{x}}.
-$$
-
-因此
-
-$$
-\frac{f'(x)}{f(x)}
-=
-\frac{1}{x}
-\left(
-\frac{1}{1-\frac{\alpha_1}{x}}
-+
-\frac{1}{1-\frac{\alpha_2}{x}}
-+\cdots+
-\frac{1}{1-\frac{\alpha_k}{x}}
-\right).
-$$
-
-再利用等比級數展開
-
-$$
-\frac{1}{1-t}=1+t+t^2+t^3+\cdots
-\qquad (|t|<1),
-$$
-
-令 \(t=\frac{\alpha_i}{x}\)，則
-
-$$
-\frac{1}{1-\frac{\alpha_i}{x}}
-=
-1+\frac{\alpha_i}{x}+\frac{\alpha_i^2}{x^2}+\frac{\alpha_i^3}{x^3}+\cdots.
-$$
-
-代回上式：
+取 \(\ln\) 並微分：
 
 $$
 \begin{aligned}
+(\ln f(x))'
+&=(\ln a+\ln(x-\alpha_1)+\ln(x-\alpha_2)+\cdots+\ln(x-\alpha_k))' \\
 \frac{f'(x)}{f(x)}
-&=
-\frac{1}{x}
-\sum_{i=1}^k
-\left(
-1+\frac{\alpha_i}{x}+\frac{\alpha_i^2}{x^2}+\frac{\alpha_i^3}{x^3}+\cdots
-\right) \\
-&=
-\frac{1}{x}
-\left[
-\sum_{i=1}^k 1
-+
-\frac{1}{x}\sum_{i=1}^k \alpha_i
-+
-\frac{1}{x^2}\sum_{i=1}^k \alpha_i^2
-+
-\frac{1}{x^3}\sum_{i=1}^k \alpha_i^3
-+\cdots
-\right].
+&=\frac{1}{x-\alpha_1}+\frac{1}{x-\alpha_2}+\cdots+\frac{1}{x-\alpha_k} \\
+&=\frac{1}{x}\left(\frac{1}{1-\alpha_1/x}+\frac{1}{1-\alpha_2/x}+\cdots+\frac{1}{1-\alpha_k/x}\right) \\
+&=\frac{1}{x}\left(\left(1+\frac{\alpha_1}{x}+\frac{\alpha_1^2}{x^2}+\cdots\right)+\left(1+\frac{\alpha_2}{x}+\frac{\alpha_2^2}{x^2}+\cdots\right)+\cdots\right) \\
+&=\frac{S_0}{x}+\frac{S_1}{x^2}+\frac{S_2}{x^3}+\cdots
 \end{aligned}
 $$
-
-依照 \(S_n\) 的定義，
-
-$$
-S_0=\sum_{i=1}^k 1,\qquad
-S_1=\sum_{i=1}^k \alpha_i,\qquad
-S_2=\sum_{i=1}^k \alpha_i^2,\qquad
-\ldots
-$$
-
-所以最後得到
-
-$$
-\frac{f'(x)}{f(x)}
-=
-\frac{S_0}{x}
-+
-\frac{S_1}{x^2}
-+
-\frac{S_2}{x^3}
-+\cdots.
-$$
-
-證畢。
