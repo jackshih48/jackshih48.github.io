@@ -17,6 +17,10 @@ Welcome~ 👋
 - [Tangent Line for All Quadratic Curves](./linear_algebra/quadratic_tangent.md)
 - [Duality in Quadratic Curves](./linear_algebra/conic_sections_dual.md)
 
+### Math Techniques
+
+- [Sum of the N-th Powers of Roots](./linear_algebra/nth_power_sum_of_roots.md)
+
 ---
 
 ## 🛰 Communication Notes
