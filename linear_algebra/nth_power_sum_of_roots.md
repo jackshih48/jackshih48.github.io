@@ -90,7 +90,8 @@ f'(x)=2x-4.
 $$
 
 做多項式除法：
-<img src="./roots.png" alt="roots" width="500">
+
+<img src="./roots.png" alt="roots" width="400">
 
 所以
 
