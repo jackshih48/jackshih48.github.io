@@ -84,6 +84,7 @@ $$
 考慮多項式 $f(x)=x^2-4x+5$，設其二根為 $\alpha,\beta$，要求 $\alpha^4+\beta^4$.
 
 先求導數：
+
 $$
 f'(x)=2x-4.
 $$
@@ -92,15 +93,19 @@ $$
 <img src="./roots.png" alt="roots" width="500">
 
 所以
+
 $$
 \frac{f'(x)}{f(x)}=\frac{2}{x}+\frac{4}{x^2}-\frac{6}{x^3}+\frac{4}{x^4}+\frac{-14}{x^5}+\cdots
 $$
 
 由
+
 $$
 \frac{f'(x)}{f(x)}=\frac{S_0}{x}+\frac{S_1}{x^2}+\frac{S_2}{x^3}+\frac{S_3}{x^4}+\frac{S_4}{x^5}+\cdots
 $$
+
 可得
+
 $$
 S_4=-14.
 $$
