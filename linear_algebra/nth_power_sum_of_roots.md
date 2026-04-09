@@ -81,41 +81,19 @@ $$
 
 ## 例子
 
-考慮多項式 $f(x)=x^3-x^2+x-5$，設其三根為 $\alpha,\beta,\gamma$，要求 $\alpha^4+\beta^4+\gamma^4$.
+考慮多項式 $f(x)=x^2-4x+5$，設其二根為 $\alpha,\beta$，要求 $\alpha^4+\beta^4$.
 
 先求導數：
 $$
-f'(x)=3x^2-2x+1.
+f'(x)=2x-4.
 $$
 
-因此
-$$
-\frac{f'(x)}{f(x)}=\frac{3x^2-2x+1}{x^3-x^2+x-5}.
-$$
-
-直接做長除法：
-$$
-\begin{array}{r}
-\qquad\qquad 3 \qquad 1 \qquad -1 \qquad 13 \qquad 19 \qquad \cdots \\[4pt]
-1 \quad -1 \quad 1 \quad -5 \;\big)\; 3 \quad -2 \quad 1 \quad 0 \quad 0 \quad 0 \quad \cdots \\[6pt]
-\qquad\qquad\qquad\;\; 3 \quad -3 \quad 3 \quad -15 \\[-2pt]
-\qquad\qquad\qquad\qquad\underline{\hspace{3.8cm}} \\[-2pt]
-\qquad\qquad\qquad\qquad 1 \quad -2 \quad 15 \quad 0 \\[6pt]
-\qquad\qquad\qquad\qquad 1 \quad -1 \quad 1 \quad -5 \\[-2pt]
-\qquad\qquad\qquad\qquad\underline{\hspace{3.8cm}} \\[-2pt]
-\qquad\qquad\qquad\qquad\qquad -1 \quad 14 \quad 5 \quad 0 \\[6pt]
-\qquad\qquad\qquad\qquad\qquad -1 \quad 1 \quad -1 \quad 5 \\[-2pt]
-\qquad\qquad\qquad\qquad\qquad\underline{\hspace{3.8cm}} \\[-2pt]
-\qquad\qquad\qquad\qquad\qquad\qquad 13 \quad 6 \quad -5 \quad 0 \\[6pt]
-\qquad\qquad\qquad\qquad\qquad\qquad 13 \quad -13 \quad 13 \quad -65 \\[-2pt]
-\qquad\qquad\qquad\qquad\qquad\qquad\underline{\hspace{4.2cm}} \\[-2pt]
-\qquad\qquad\qquad\qquad\qquad\qquad\qquad 19 \quad -18 \quad 65 \quad \cdots
-\end{array}
-$$
+做多項式除法：
+<img src="./roots.png" alt="roots" width="500">
 
 所以
 $$
-\frac{f'(x)}{f(x)}=\frac{3}{x}+\frac{1}{x^2}-\frac{1}{x^3}+\frac{13}{x^4}+\frac{19}{x^5}+\cdots
+\frac{f'(x)}{f(x)}=\frac{2}{x}+\frac{4}{x^2}-\frac{6}{x^3}+\frac{4}{x^4}+\frac{-14}{x^5}+\cdots
 $$
 
 由
@@ -124,10 +102,5 @@ $$
 $$
 可得
 $$
-S_4=19.
-$$
-
-因此
-$$
-\boxed{\alpha^4+\beta^4+\gamma^4=19.}
+S_4=-14.
 $$
