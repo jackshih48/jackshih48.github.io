@@ -1,5 +1,5 @@
 git pull origin main --rebase
 
 git add -A
-git commit -m "article, conic tangent, Date: 2026-04-05"
+git commit -m "article, roots, Date: 2026-04-09"
 git push origin main 
