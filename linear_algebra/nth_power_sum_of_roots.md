@@ -21,7 +21,7 @@ $$
 S_n=\alpha_1^n+\alpha_2^n+\cdots+\alpha_k^n,
 $$
 
-則有展開式
+則有公式
 
 $$
 \boxed{
@@ -93,7 +93,7 @@ $$
 f'(x)=2x-4.
 $$
 
-做多項式除法：
+做多項式除法 (想像將公式兩邊同乘 $x^100$ 會發現跟正常的多項式除法作法一致)：
 
 <img src="./roots.png" alt="roots" width="500">
 
