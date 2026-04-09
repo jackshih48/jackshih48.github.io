@@ -78,3 +78,65 @@ $$
 &=\frac{S_0}{x}+\frac{S_1}{x^2}+\frac{S_2}{x^3}+\cdots
 \end{aligned}
 $$
+
+## 例子
+
+考慮多項式
+$$
+f(x)=x^3-x^2+x-5
+$$
+設其三根為 \(\alpha,\beta,\gamma\)，要求
+$$
+\alpha^4+\beta^4+\gamma^4.
+$$
+
+先求導數：
+$$
+f'(x)=3x^2-2x+1.
+$$
+
+因此
+$$
+\frac{f'(x)}{f(x)}
+=
+\frac{3x^2-2x+1}{x^3-x^2+x-5}.
+$$
+
+直接做長除法：
+$$
+\begin{array}{r|rrrrrr}
+ & \frac{3}{x} & \frac{1}{x^2} & -\frac{1}{x^3} & \frac{13}{x^4} & \frac{19}{x^5} & \cdots \\ \hline
+x^3-x^2+x-5 \;\big)\; 3x^2 & -2x & 1 & 0 & 0 & 0 & \cdots \\
+\multicolumn{7}{r}{\underline{\phantom{xxxxx}3x^2-3x+3-\frac{15}{x}\phantom{xxxxx}}} \\
+ & x & -2 & \frac{15}{x} & 0 & 0 & \cdots \\
+\multicolumn{7}{r}{\underline{\phantom{xxxxxxxx}\;x-1+\frac{1}{x}-\frac{5}{x^2}\phantom{xxxxxxxx}}} \\
+ & -1 & \frac{14}{x} & \frac{5}{x^2} & 0 & \cdots \\
+\multicolumn{7}{r}{\underline{\phantom{xxxxxxxxxxxxxx}-1+\frac{1}{x}-\frac{1}{x^2}+\frac{5}{x^3}\phantom{xxxxxxxxxxxxxx}}} \\
+ & \frac{13}{x} & \frac{6}{x^2} & -\frac{5}{x^3} & \cdots \\
+\multicolumn{7}{r}{\underline{\phantom{xxxxxxxxxxxxxxxxxxxx}\frac{13}{x}-\frac{13}{x^2}+\frac{13}{x^3}-\frac{65}{x^4}\phantom{xxxxxxxxxxxxxxxxxxxx}}} \\
+ & \frac{19}{x^2} & -\frac{18}{x^3} & \frac{65}{x^4} & \cdots
+\end{array}
+$$
+
+所以
+$$
+\frac{f'(x)}{f(x)}
+=
+\frac{3}{x}+\frac{1}{x^2}-\frac{1}{x^3}+\frac{13}{x^4}+\frac{19}{x^5}+\cdots
+$$
+
+由
+$$
+\frac{f'(x)}{f(x)}
+=
+\frac{S_0}{x}+\frac{S_1}{x^2}+\frac{S_2}{x^3}+\frac{S_3}{x^4}+\frac{S_4}{x^5}+\cdots
+$$
+可得
+$$
+S_4=19.
+$$
+
+因此
+$$
+\boxed{\alpha^4+\beta^4+\gamma^4=19.}
+$$
