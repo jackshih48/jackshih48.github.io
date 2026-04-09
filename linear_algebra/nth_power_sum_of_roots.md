@@ -70,6 +70,7 @@ $$
 等號兩邊可改寫:
 
 $$
+\begin{aligned}
 \frac{f'(x)}{f(x)}
 &=\frac{1}{x-\alpha_1}+\frac{1}{x-\alpha_2}+\cdots+\frac{1}{x-\alpha_k} \\
 &=\frac{1}{x}\left(\frac{1}{1-\alpha_1/x}+\frac{1}{1-\alpha_2/x}+\cdots+\frac{1}{1-\alpha_k/x}\right) \\
