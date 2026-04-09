@@ -42,12 +42,12 @@ $$
 接著對原多項式取 $\ln$ 並微分:
 
 $$
-\begin{algined}
+\begin{aligned}
 (\ln f(x))' = (\ln a + \ln(x-\alpha_1) + \ln(x-\alpha_2) + \dots + \ln(x-\alpha_k))' \\
 \frac{f'(x)}{f(x)} = \frac{1}{x-\alpha_1} + \frac{1}{x-\alpha_2} + \dots \frac{1}{x-\alpha_k} \\
 \frac{f'(x)}{f(x)} = \frac{1}{x} (\frac{1}{1-\alpha_1 / x} + \frac{1}{1-\alpha_2 / x} + \dots \frac{1}{x-\alpha_k  / x}) \\
 \frac{f'(x)}{f(x)} = \frac{1}{x} ((1 + \frac{\alpha_1 / x} + \frac{\alpha_1^2 / x^2} + \dots) + (\dots) + \dots) \\
 \frac{f'(x)}{f(x)} = \frac{S_0}{x} + \frac{S_1}{x^2} + \frac{S_2}{x^3} + \dots
-\end{algined}
+\end{aligned}
 $$
 
