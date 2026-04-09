@@ -91,7 +91,7 @@ $$
 
 做多項式除法：
 
-<img src="./roots.png" alt="roots" width="400">
+<img src="./roots.png" alt="roots" width="500">
 
 所以
 
