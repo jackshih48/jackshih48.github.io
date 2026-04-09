@@ -56,10 +56,12 @@ $$
 $$
 
 接著對
+
 $$
 f(x)=a(x-\alpha_1)(x-\alpha_2)\cdots(x-\alpha_k)
 $$
-取 \(\ln\) 並微分：
+
+取 $\ln$ 並微分：
 
 $$
 \begin{aligned}
