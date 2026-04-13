@@ -20,6 +20,7 @@ Welcome~ 👋
 ### Math Techniques
 
 - [Sum of the N-th Powers of Roots](./linear_algebra/nth_power_sum_of_roots.md)
+- [Woodbury Identity](./linear_algebra/woodbury_identity.md)
 
 ---
 
