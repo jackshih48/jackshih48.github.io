@@ -19,7 +19,7 @@ $$
 
 ## 證明
 
-Lemma(Push-through identity, 穿透律):
+Lemma (Push-through identity, 穿透律) :
 
 將下述等式
 
