@@ -18,8 +18,7 @@ $$
 當 $C=I, U=\mathbf{u}, V=\mathbf{v}^T$ 時，可簡化為 Sherman-Morrison 公式:
 
 $$
-(A+\mathbf{u}\mathbf{v}^T)^{-1} = 
-A^{-1} - \frac{A^{-1}\mathbf{u}\mathbf{v}^TA^{-1}}{I + \mathbf{v}^TA^{-1}\mathbf{u}}.
+(A+\mathbf{u}\mathbf{v}^T)^{-1} = A^{-1} - \frac{A^{-1}\mathbf{u}\mathbf{v}^TA^{-1}}{I + \mathbf{v}^TA^{-1}\mathbf{u}}.
 $$
 <br>
 
