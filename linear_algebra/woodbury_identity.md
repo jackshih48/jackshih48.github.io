@@ -29,8 +29,8 @@ Lemma (Push-through identity, 穿透律) :
 
 $$
 \begin{aligned}
-V(I + UV) = (I + VU)V \\
-V(I + UV)^{-1} = (I + VU)^{-1}V
+V(I + UV) &= (I + VU)V \\
+V(I + UV)^{-1} &= (I + VU)^{-1}V
 \end{aligned}
 $$
 
