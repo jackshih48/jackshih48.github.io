@@ -20,6 +20,7 @@ $$
 $$
 (A+\mathbf{u}\mathbf{v}^T)^{-1} = A^{-1} - \frac{A^{-1}\mathbf{u}\mathbf{v}^TA^{-1}}{I + \mathbf{v}^TA^{-1}\mathbf{u}}.
 $$
+
 <br>
 
 ## 證明
