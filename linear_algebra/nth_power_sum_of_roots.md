@@ -83,7 +83,7 @@ $$
 
 <br>
 
-## 例子
+## 例子1
 
 考慮多項式 $f(x)=x^2-4x+5$，設其二根為 $\alpha,\beta$，要求 $\alpha^4+\beta^4$.
 
@@ -113,4 +113,68 @@ $$
 
 $$
 S_4=-14.
+$$
+
+<br>
+
+## 例子2
+
+考慮矩陣
+
+$$
+A=
+\begin{pmatrix}
+0 & -5\\
+1 & 4
+\end{pmatrix},
+$$
+
+要求
+
+$$
+\operatorname{tr}(A^4).
+$$
+
+由於矩陣的跡是特徵值和，因此我們有:
+
+$$
+\operatorname{tr}(A^n)=\alpha_0^n+ \dots + \alpha_k^n.
+$$
+
+其中 $\alpha_i$ 是矩陣 $A$ 的特徵值。
+
+矩陣 $A$ 的特徵多項式為
+
+$$
+\det(xI-A)
+=
+\det
+\begin{pmatrix}
+x & 5\\
+-1 & x-4
+\end{pmatrix}
+=
+x(x-4)+5
+=
+x^2-4x+5.
+$$
+
+則它的特徵值為 $\alpha,\beta$ 正是多項式
+
+$$
+f(x)=x^2-4x+5
+$$
+
+的兩個根。
+
+而在例子1中，我們已經對 $f(x)=x^2-4x+5$ 求出
+
+$$
+S_4=\alpha^4+\beta^4=-14.
+$$
+
+因此立刻得到
+
+$$
+\boxed{\operatorname{tr}(A^4)=-14.}
 $$
