@@ -135,7 +135,8 @@ $$
 \operatorname{tr}(A^4).
 $$
 
-由於矩陣的跡是特徵值和，因此我們有:
+若 $\lambda$ 是矩陣 $A$ 的特徵值，那麼 $\lambda^n$ 會是 $A^n$ 的特徵值。
+且由於矩陣的跡是特徵值和，因此我們有:
 
 $$
 \operatorname{tr}(A^n)=\alpha_0^n+ \dots + \alpha_k^n.
