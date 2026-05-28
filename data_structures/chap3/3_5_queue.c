@@ -13,7 +13,7 @@ void initQ(struct Queue *q);
 void pushQ(struct Queue *q, int a);
 int popQ(struct Queue *q);
 void printQ(struct Queue *q);
-int peek(struct Queue *q);
+int peekQ(struct Queue *q);
 int isFull(struct Queue *q);
 int isEmpty(struct Queue *q);
 
@@ -21,21 +21,21 @@ int main(void)
 {
 	struct Queue q;
 	
-	init(&q);
+	initQ(&q);
 	
 	pushQ(&q, 10);
 	pushQ(&q, 20);
 	pushQ(&q, 30);
 	printQ(&q);
 	
-    printf("Dequeue: %d\n", popQ(&q));
+    printf("Pop: %d\n", popQ(&q));
     printQ(&q);
 
-    popQ(&q, 40);
-    popQ(&q, 50);
+    pushQ(&q, 40);
+    pushQ(&q, 50);
     printQ(&q);
 
-    printf("Peek: %d\n", peek(&q));
+    printf("Peek: %d\n", peekQ(&q));
 	
 	return 0;
 }
@@ -82,7 +82,7 @@ void printQ(struct Queue *q)
     printf("front = %d, rear = %d\n", q->front, q->rear);
 }
 
-int peek(struct Queue *q)
+int peekQ(struct Queue *q)
 {
     if (isEmpty(q)) {
         printf("Queue is empty\n");

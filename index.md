@@ -22,6 +22,9 @@ Welcome~ 👋
 - [Sum of the N-th Powers of Roots](./linear_algebra/nth_power_sum_of_roots.md)
 - [Woodbury Identity](./linear_algebra/woodbury_identity.md)
 
+### OTFS
+- [High Mobility Wireless Channel](./linear_algebra/otfs/ch2/high_mobility_wireless_channel.md)
+
 ---
 
 ## 🛰 Communication Notes
