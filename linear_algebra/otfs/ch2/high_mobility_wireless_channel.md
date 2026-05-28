@@ -3,16 +3,14 @@ layout: math
 title: High Mobility Wireless Channel
 ---
 
-# 線性代數筆記：特徵值分解 (EVD) 與奇異值分解 (SVD)
+# High Mobility Wireless Channel
 
-## 一、 特徵值分解 (Eigenvalue Decomposition, EVD)
+## Geometric Model
 
 
 
 
 ---
 
-## 二、 奇異值分解 (Singular Value Decomposition, SVD)
-
-### 1. SVD 幾何存在性定理
+## Delay-Doppler Representation
 
