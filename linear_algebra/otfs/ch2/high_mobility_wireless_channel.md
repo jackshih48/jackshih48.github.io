@@ -7,7 +7,7 @@ title: High Mobility Wireless Channel
 
 ## Geometric Model
 
-情況1: Paths with different propagation delays.
+### 情況1: Paths with different propagation delays.
 
 <img src="./img1.png" width="500">
 
@@ -23,7 +23,7 @@ $$
 
 <br>
 
-情況2: Paths with different Doppler shifts.
+### 情況2: Paths with different Doppler shifts.
 
 <img src="./img2.png" width="500">
 
@@ -52,13 +52,20 @@ $$
 並定義出時變增益 (time-varying attenuation)，
 
 $$
-g(\tau_i, t) = g_i e^{j2\pi \nu_i (t-\tau_i)}, \quad i=1,2.
+g(\tau_i, t) = g_i e^{j2\pi \nu_i (t-\tau_i)}, \quad i=1,2，
+$$
+
+因此，通道的 delay-time impulse response 為
+
+$$
+g(\tau, t) = g(\tau_1, t) \delta(\tau - \tau_1) + g(\tau_2, t) \delta(\tau - \tau_2).
 $$
 
 <br>
 
-考慮一般化的情況，通道會有 $P$ 個路徑，
-則通道的 delay-time impulse response 為
+### 考慮一般化的情況，通道有 $P$ 個路徑
+
+當通道有 $P$ 個路徑時，通道的 delay-time impulse response 為
 
 $$
 g(\tau, t)
