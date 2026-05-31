@@ -47,6 +47,28 @@ $$
 
 其中 $\nu_1=vf_c/c, \nu_2=vf_c \cos \theta/c$ 分別是直視路徑與反射路徑的都卜勒頻移(Doppler  shift)。
 
+定義時變增益 (time-varying attenuation)，
+
+$$
+g(\tau_i, t) = g_i e^{j2\pi \nu_i (t-\tau_i)}, \quad i=1,2.
+$$
+
+考慮一般化的情況，通道會有 $P$ 個路徑，
+則通道的 delay-time impulse response 為
+
+$$
+g(\tau, t)
+= \Sum_{i=1}^{P} g(\tau_i, t) \delta(\tau - \tau_i)
+= \Sum_{i=1}^{P} g_i e^{j2\pi \nu_i (t-\tau_i)} \delta(\tau - \tau_i).
+$$
+
+所以這個多徑衰變通道 (multipath fading channel)，可以表示成LTV (linear time varying) 形式:
+
+$$
+r(t)
+= \Sum_{i=1}^{P} g(\tau_i, t) s(\tau - \tau_i)
+= \int_{0}^{\infty} g(\tau, t) s(t-\tau) d\tau.
+$$
 
 ---
 
