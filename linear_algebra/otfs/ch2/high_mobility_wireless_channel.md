@@ -70,6 +70,27 @@ r(t)
 = \int_{0}^{\infty} g(\tau, t) s(t-\tau) d\tau.
 $$
 
+從圖1、圖二可知，延遲變數 $\tau$，是用來描述訊號的，所以對應的傅立葉變數為頻率 $f$。
+而(絕對)時間變數 $t$，是用來描述環境的，因此對應的傅立葉變數為都普勒 $\nu$。
+
+因此 frequency-time impulse response 為
+
+$$
+H(f, t)
+= \int_{\tau} g(\tau, t) e^{-j2\pi f \tau} d\tau
+= \Sum_{i=1}^{P} g_i e^{-j2\pi \nu_i \tau_i} e^{-j2\pi (f\tau_i-\nu_it)}.
+$$
+
+其中第一項代表衰減，第二項代表初始相位，第三項則是頻率和時間的波函數。
+因為到達的時間差 (delay) ，造成建設性或破壞性干涉，可發現在固定 $t$ 時，無線通道環境對不同頻率會產生濾波效果。
+
+當通道是靜態的特例時， $\nu_i = 0$，且 $H(f,t)$ 不再是 $t$ 的函數，
+因此
+
+$$
+H(f) = \Sum_{i=1}^{P} g_i e^{-j2\pi f \tau_i}.
+$$
+
 ---
 
 ## Delay-Doppler Representation
