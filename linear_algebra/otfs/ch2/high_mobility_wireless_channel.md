@@ -58,15 +58,15 @@ $$
 
 $$
 g(\tau, t)
-= \Sum_{i=1}^{P} g(\tau_i, t) \delta(\tau - \tau_i)
-= \Sum_{i=1}^{P} g_i e^{j2\pi \nu_i (t-\tau_i)} \delta(\tau - \tau_i).
+= \sum_{i=1}^{P} g(\tau_i, t) \delta(\tau - \tau_i)
+= \sum_{i=1}^{P} g_i e^{j2\pi \nu_i (t-\tau_i)} \delta(\tau - \tau_i).
 $$
 
 所以這個多徑衰變通道 (multipath fading channel)，可以表示成LTV (linear time varying) 形式:
 
 $$
 r(t)
-= \Sum_{i=1}^{P} g(\tau_i, t) s(\tau - \tau_i)
+= \sum_{i=1}^{P} g(\tau_i, t) s(\tau - \tau_i)
 = \int_{0}^{\infty} g(\tau, t) s(t-\tau) d\tau.
 $$
 
@@ -78,7 +78,7 @@ $$
 $$
 H(f, t)
 = \int_{\tau} g(\tau, t) e^{-j2\pi f \tau} d\tau
-= \Sum_{i=1}^{P} g_i e^{-j2\pi \nu_i \tau_i} e^{-j2\pi (f\tau_i-\nu_it)}.
+= \sum_{i=1}^{P} g_i e^{-j2\pi \nu_i \tau_i} e^{-j2\pi (f\tau_i-\nu_it)}.
 $$
 
 其中第一項代表衰減，第二項代表初始相位，第三項則是頻率和時間的波函數。
@@ -88,7 +88,7 @@ $$
 因此
 
 $$
-H(f) = \Sum_{i=1}^{P} g_i e^{-j2\pi f \tau_i}.
+H(f) = \sum_{i=1}^{P} g_i e^{-j2\pi f \tau_i}.
 $$
 
 ---
