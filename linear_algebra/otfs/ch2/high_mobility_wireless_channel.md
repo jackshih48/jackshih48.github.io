@@ -45,9 +45,9 @@ $$
 r(t) = g_1 e^{j2\pi \nu_1 (t-\tau_1)} s(t-\tau_1) + g_2 e^{j2\pi \nu_2 (t-\tau_2)} s(t-\tau_2),
 $$
 
-其中 $\nu_1=vf_c/c, \nu_2=vf_c \cos \theta/c$ 分別是直視路徑與反射路徑的都卜勒頻移(Doppler  shift)。
+其中 $\nu_1=vf_c/c, \nu_2=vf_c \cos \theta/c$ 分別是直視路徑與反射路徑的都卜勒頻移(Doppler  shift)，
 
-定義時變增益 (time-varying attenuation)，
+並定義出時變增益 (time-varying attenuation)，
 
 $$
 g(\tau_i, t) = g_i e^{j2\pi \nu_i (t-\tau_i)}, \quad i=1,2.
@@ -62,7 +62,7 @@ g(\tau, t)
 = \sum_{i=1}^{P} g_i e^{j2\pi \nu_i (t-\tau_i)} \delta(\tau - \tau_i).
 $$
 
-所以這個多徑衰變通道 (multipath fading channel)，可以表示成LTV (linear time varying) 形式:
+所以多徑衰變通道 (multipath fading channel)，可以表示成LTV (linear time varying) 形式:
 
 $$
 r(t)
