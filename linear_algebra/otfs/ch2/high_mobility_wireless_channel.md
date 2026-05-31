@@ -7,9 +7,9 @@ title: High Mobility Wireless Channel
 
 ## Geometric Model
 
-<img src="./img1.png" width="500">
-
 情況1: Paths with different propagation delays.
+
+<img src="./img1.png" width="500">
 
 當傳送訊號 $s(t)$ 在直視路徑(LOS)與反射路徑分別有基頻等效增益 $g_1$ 和 $g_2$ 
 baseband equivalent complex gain, attenuation)，
@@ -21,9 +21,11 @@ $$
 
 其中 $\tau_1=r_1/c, \tau_2=(r_2+r_3/c)$ 分別是直視路徑與反射路徑的延遲(delay)。
 
-<img src="./img2.png" width="500">
+<br>
 
 情況2: Paths with different Doppler shifts.
+
+<img src="./img2.png" width="500">
 
 若 $s(t)$ 的頻寬是 $B$，則都卜勒頻移可表示為
 
@@ -52,6 +54,8 @@ $$
 $$
 g(\tau_i, t) = g_i e^{j2\pi \nu_i (t-\tau_i)}, \quad i=1,2.
 $$
+
+<br>
 
 考慮一般化的情況，通道會有 $P$ 個路徑，
 則通道的 delay-time impulse response 為
@@ -82,7 +86,8 @@ H(f, t)
 $$
 
 其中第一項代表衰減，第二項代表初始相位，第三項則是頻率和時間的波函數。
-因為到達的時間差 (delay) ，造成建設性或破壞性干涉，可發現在固定 $t$ 時，無線通道環境對不同頻率會產生濾波效果。
+因為到達的時間差 (delay) ，造成建設性或破壞性干涉，可發現在固定 $t$ 時，無線通道環境對不同頻率會產生濾波效果
+ (即 frequency selective channel)。
 
 當通道是靜態的特例時， $\nu_i = 0$，且 $H(f,t)$ 不再是 $t$ 的函數，
 因此
