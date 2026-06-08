@@ -1,9 +1,14 @@
 ---
 layout: page
-title: Hot Tomjack
+title: Hot Tomjack Notes
 ---
 
-Welcome~ 👋  
+Welcome~
+
+### About Me
+- Email: jackshih48@gmail.com  
+- Youtube: <https://www.youtube.com/@hottomjack> 
+- GitHub： <https://github.com/jackshih48>
 
 ---
 ## 📰 Articles
@@ -51,9 +56,3 @@ Welcome~ 👋
 - [Data Structure](/data_structures)
 - [MCU](/ESP32): [DEMO](https://www.youtube.com/shorts/Nv46WCSDo_0)
 - [LeetCode](/leetcode/)
-
----
-
-### About Me
-- Email: jackshih48@gmail.com  
-- GitHub： <https://github.com/jackshih48>

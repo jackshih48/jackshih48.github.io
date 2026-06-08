@@ -1,5 +1,5 @@
 git pull origin main --rebase
 
 git add -A
-git commit -m "Website name, Date: 2026-06-08"
+git commit -m "Website, Date: 2026-06-08"
 git push origin main 
