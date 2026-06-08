@@ -12,7 +12,7 @@ title: High Mobility Wireless Channel
 <img src="./img1.png" width="500">
 
 當傳送訊號 $s(t)$ 在直視路徑(LOS)與反射路徑分別有基頻等效增益 $g_1$ 和 $g_2$ 
-baseband equivalent complex gain, attenuation)，
+(baseband equivalent complex gain, attenuation)，
 那麼根據波的疊加原理，接收訊號可以表示為:
 
 $$
