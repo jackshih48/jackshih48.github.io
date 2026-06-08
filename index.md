@@ -6,7 +6,7 @@ title: Hot Tomjack
 Welcome~ 👋  
 
 ---
-## Articles
+## 📰 Articles
 
 ### Linear Algebra
 
@@ -56,5 +56,4 @@ Welcome~ 👋
 
 ### About Me
 - Email: jackshih48@gmail.com  
-- Expertise：Radio channel  
 - GitHub： <https://github.com/jackshih48>
