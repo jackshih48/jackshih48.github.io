@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Hot Tomjack Notes
+title: HotTomjack Notes
 ---
 
 ### Welcome~ About Me
