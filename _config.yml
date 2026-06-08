@@ -11,6 +11,9 @@ header_pages:
 # GitHub Pages 內建支援的主題
 theme: minima
 
+plugins:
+  - jekyll-sitemap
+
 # 頁尾社群資訊（可改）
 github_username: jackshih48
 email: jackshih48@gmail.com
