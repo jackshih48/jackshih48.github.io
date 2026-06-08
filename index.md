@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Jack Shih's Blog
+title: Hot Tomjack
 ---
 
 Welcome~ 👋  
