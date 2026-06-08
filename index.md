@@ -3,9 +3,7 @@ layout: page
 title: Hot Tomjack Notes
 ---
 
-Welcome~
-
-### About Me
+### Welcome~ About Me
 - Email: jackshih48@gmail.com  
 - Youtube: <https://www.youtube.com/@hottomjack> 
 - GitHub： <https://github.com/jackshih48>
