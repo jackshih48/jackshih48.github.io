@@ -9,7 +9,7 @@ title: High Mobility Wireless Channel
 
 ### 情況1: Paths with different propagation delays.
 
-<img src="./img1.png" width="500">
+<img src="./img1.png" width="700">
 
 當傳送訊號 $s(t)$ 在直視路徑(LOS)與反射路徑分別有基頻等效增益 $g_1$ 和 $g_2$ 
 (baseband equivalent complex gain, attenuation)，
@@ -25,7 +25,7 @@ $$
 
 ### 情況2: Paths with different Doppler shifts.
 
-<img src="./img2.png" width="500">
+<img src="./img2.png" width="700">
 
 若 $s(t)$ 的頻寬是 $B$，則都卜勒頻移可表示為
 
@@ -111,9 +111,11 @@ $$
 In general, the small-scale fading effects of a wireless channel can be represented using a small number of scatterers. The effect of a scatterer can be represented using the delay (due to distance) and Doppler shift (due to relative motion). This means that the wireless channel has a sparse representation in the delay-Doppler domain.
 
 The delay-Doppler response is
+
 $$
 h(\tau, \nu) = \sum{i=1}^{P} g_i e^{-j2\pi \nu_i \tau_i} \delta(\tau-\tau_i) \delta(\nu-\nu_i),
 $$
+
 that is, the channel coefficient $g_i$ and constant phase shift $e^{-j2\pi \nu_i \tau_i}$ on the grid of delay-Doppler domain.
 
-<img src="./img3.png" width="500">
+<img src="./img3.png" width="700">
