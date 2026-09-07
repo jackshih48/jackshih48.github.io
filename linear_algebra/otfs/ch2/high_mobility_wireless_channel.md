@@ -5,6 +5,8 @@ title: High Mobility Wireless Channel
 
 # High Mobility Wireless Channel
 
+---
+
 ## Geometric Model
 
 ### 情況1: Paths with different propagation delays.
@@ -113,7 +115,7 @@ In general, the small-scale fading effects of a wireless channel can be represen
 The delay-Doppler response is
 
 $$
-h(\tau, \nu) = \sum{i=1}^{P} g_i e^{-j2\pi \nu_i \tau_i} \delta(\tau-\tau_i) \delta(\nu-\nu_i),
+h(\tau, \nu) = \sum_{i=1}^{P} g_i e^{-j2\pi \nu_i \tau_i} \delta(\tau-\tau_i) \delta(\nu-\nu_i),
 $$
 
 that is, the channel coefficient $g_i$ and constant phase shift $e^{-j2\pi \nu_i \tau_i}$ on the grid of delay-Doppler domain.
