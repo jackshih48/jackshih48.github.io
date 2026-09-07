@@ -19,7 +19,7 @@ $$
 r(t) = g_1 s(t-\tau_1) + g_2 s(t-\tau_2),
 $$
 
-其中 $\tau_1=r_1/c, \tau_2=(r_2+r_3/c)$ 分別是直視路徑與反射路徑的延遲(delay)。
+其中 $\tau_1=r_1/c, \tau_2=(r_2+r_3)/c$ 分別是直視路徑與反射路徑的延遲(delay)。
 
 <br>
 
@@ -77,7 +77,8 @@ $$
 
 $$
 r(t)
-= \sum_{i=1}^{P} g(\tau_i, t) s(\tau - \tau_i)
+= \sum_{i=1}^{P} g_i e^{j2\pi \nu_i (t-\tau_i)} s(t - \tau_i)
+= \sum_{i=1}^{P} g(\tau_i, t) s(t - \tau_i)
 = \int_{0}^{\infty} g(\tau, t) s(t-\tau) d\tau.
 $$
 
@@ -107,3 +108,12 @@ $$
 
 ## Delay-Doppler Representation
 
+In general, the small-scale fading effects of a wireless channel can be represented using a small number of scatterers. The effect of a scatterer can be represented using the delay (due to distance) and Doppler shift (due to relative motion). This means that the wireless channel has a sparse representation in the delay-Doppler domain.
+
+The delay-Doppler response is
+$$
+h(\tau, \nu) = \sum{i=1}^{P} g_i e^{-j2\pi \nu_i \tau_i} \delta(\tau-\tau_i) \delta(\nu-\nu_i),
+$$
+that is, the channel coefficient $g_i$ and constant phase shift $e^{-j2\pi \nu_i \tau_i}$ on the grid of delay-Doppler domain.
+
+<img src="./img3.png" width="500">

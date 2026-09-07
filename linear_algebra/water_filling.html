@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIMO 注水演算法模擬器</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 800px; }
+        h1 { text-align: center; color: #2c3e50; }
+        .controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; padding: 20px; background: #eef2f5; border-radius: 8px; }
+        .control-group { display: flex; flex-direction: column; }
+        label { font-weight: bold; margin-bottom: 5px; font-size: 14px; }
+        input[type="range"] { width: 100%; }
+        
+        /* 圖表區域 */
+        .chart-container { position: relative; height: 350px; width: 100%; border-bottom: 3px solid #34495e; border-left: 3px solid #34495e; display: flex; align-items: flex-end; justify-content: space-around; padding-top: 20px; margin-top: 20px; }
+        .bar-wrapper { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; width: 12%; height: 100%; position: relative; }
+        .power-bar { width: 100%; background-color: #3498db; opacity: 0.8; transition: height 0.3s ease; display: flex; justify-content: center; align-items: center; color: white; font-size: 12px; font-weight: bold; border-top-left-radius: 4px; border-top-right-radius: 4px; }
+        .noise-bar { width: 100%; background-color: #95a5a6; transition: height 0.3s ease; display: flex; justify-content: center; align-items: center; color: white; font-size: 12px; font-weight: bold; }
+        .bar-label { position: absolute; bottom: -25px; font-weight: bold; }
+        
+        /* 水位線 */
+        .water-line { position: absolute; left: 0; right: 0; height: 2px; background-color: #e74c3c; border-top: 2px dashed #c0392b; z-index: 10; transition: bottom 0.3s ease; }
+        .water-line-label { position: absolute; right: 10px; top: -25px; color: #c0392b; font-weight: bold; background: white; padding: 2px 6px; border-radius: 4px; }
+        
+        .results { margin-top: 30px; padding: 15px; background: #fff3cd; border-left: 5px solid #ffc107; border-radius: 4px; font-family: monospace; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>MIMO 注水演算法 (Water-Filling)</h1>
+    
+    <div class="controls">
+        <div class="control-group" style="grid-column: 1 / -1;">
+            <label>總發射功率 P: <span id="val-P">15</span></label>
+            <input type="range" id="input-P" min="1" max="40" step="0.5" value="15">
+        </div>
+        <div class="control-group">
+            <label>通道 1 雜訊 (H1): <span id="val-H0">1</span></label>
+            <input type="range" class="input-H" data-index="0" min="0.5" max="20" step="0.5" value="1">
+        </div>
+        <div class="control-group">
+            <label>通道 2 雜訊 (H2): <span id="val-H1">3</span></label>
+            <input type="range" class="input-H" data-index="1" min="0.5" max="20" step="0.5" value="3">
+        </div>
+        <div class="control-group">
+            <label>通道 3 雜訊 (H3): <span id="val-H2">4</span></label>
+            <input type="range" class="input-H" data-index="2" min="0.5" max="20" step="0.5" value="4">
+        </div>
+        <div class="control-group">
+            <label>通道 4 雜訊 (H4): <span id="val-H3">7</span></label>
+            <input type="range" class="input-H" data-index="3" min="0.5" max="20" step="0.5" value="7">
+        </div>
+        <div class="control-group">
+            <label>通道 5 雜訊 (H5): <span id="val-H4">12</span></label>
+            <input type="range" class="input-H" data-index="4" min="0.5" max="20" step="0.5" value="12">
+        </div>
+    </div>
+
+    <div class="chart-container" id="chart">
+        <div class="water-line" id="water-line"><div class="water-line-label" id="water-label">水位線 1/λ</div></div>
+        </div>
+
+    <div class="results" id="results">
+        </div>
+</div>
+
+<script>
+    // 參數初始化
+    const numChannels = 5;
+    let P = 15;
+    let H = [1, 3, 4, 7, 12];
+    
+    // UI 綁定
+    const inputP = document.getElementById('input-P');
+    const valP = document.getElementById('val-P');
+    const inputsH = document.querySelectorAll('.input-H');
+    const chart = document.getElementById('chart');
+    const waterLine = document.getElementById('water-line');
+    const resultsDiv = document.getElementById('results');
+
+    // 建立長條圖 DOM
+    const bars = [];
+    for(let i=0; i<numChannels; i++) {
+        let wrapper = document.createElement('div');
+        wrapper.className = 'bar-wrapper';
+        
+        let powerBar = document.createElement('div');
+        powerBar.className = 'power-bar';
+        
+        let noiseBar = document.createElement('div');
+        noiseBar.className = 'noise-bar';
+        
+        let label = document.createElement('div');
+        label.className = 'bar-label';
+        label.innerText = 'CH ' + (i+1);
+
+        wrapper.appendChild(powerBar);
+        wrapper.appendChild(noiseBar);
+        wrapper.appendChild(label);
+        chart.appendChild(wrapper);
+        
+        bars.push({ power: powerBar, noise: noiseBar });
+    }
+
+    // 核心演算法：迭代注水
+    function calculateWaterFilling() {
+        // 1. 初始化每個通道的狀態
+        let channels = H.map((noise, index) => ({ id: index, noise: noise, active: true, power: 0 }));
+        let waterLevel = 0;
+
+        // 2. 開始迭代 (Check & Drop)
+        while(true) {
+            let activeChannels = channels.filter(c => c.active);
+            if (activeChannels.length === 0) break;
+
+            // 計算當前暫定水面：(總功率 + 參與通道的雜訊總和) / 參與通道數量
+            let sumH = activeChannels.reduce((sum, c) => sum + c.noise, 0);
+            waterLevel = (P + sumH) / activeChannels.length;
+
+            // 找出參與通道中，地勢(雜訊)最高的那一個
+            let maxNoiseChannel = activeChannels.reduce((max, c) => c.noise > max.noise ? c : max, activeChannels[0]);
+
+            // 檢查水面是否蓋得過最高的階梯
+            if (waterLevel < maxNoiseChannel.noise) {
+                // 水不夠深，算出來會是負的，所以剔除這個通道 (設定為不活躍)
+                maxNoiseChannel.active = false;
+            } else {
+                // 所有活躍的通道都低於水面，代表找到穩定的絕對水平面了！退出迴圈。
+                break;
+            }
+        }
+
+        // 3. 計算每個通道最終分配到的功率 Pi
+        channels.forEach(c => {
+            if (c.active) {
+                c.power = waterLevel - c.noise;
+            } else {
+                c.power = 0;
+            }
+        });
+
+        updateUI(waterLevel, channels);
+    }
+
+    // 更新畫面顯示
+    function updateUI(waterLevel, channels) {
+        // 為了讓圖表比例好看，設定一個 Y 軸縮放比例
+        const maxDisplayVal = 30; 
+        const scaleY = 300 / maxDisplayVal; 
+
+        // 更新長條圖高度
+        channels.forEach((c, i) => {
+            bars[i].noise.style.height = (c.noise * scaleY) + 'px';
+            bars[i].noise.innerText = c.noise;
+            
+            bars[i].power.style.height = (c.power * scaleY) + 'px';
+            bars[i].power.innerText = c.power > 0 ? c.power.toFixed(1) : '';
+            // 若分配為0，將顏色調淡顯示被放棄
+            bars[i].noise.style.opacity = c.power > 0 ? '1' : '0.4';
+        });
+
+        // 更新水位線位置
+        waterLine.style.bottom = (waterLevel * scaleY) + 'px';
+        document.getElementById('water-label').innerText = `水位線 1/λ : ${waterLevel.toFixed(2)}`;
+
+        // 更新文字結果
+        let resHTML = `<strong>計算結果：</strong><br>`;
+        resHTML += `最終水面高度 (1/λ) = ${waterLevel.toFixed(3)}<br><br>`;
+        channels.forEach((c, i) => {
+            resHTML += `通道 ${i+1} : 雜訊 = ${c.noise.toFixed(1)} \t➔ 分配功率 P${i+1} = <strong>${c.power.toFixed(3)}</strong> ${c.power === 0 ? '(放棄)' : ''}<br>`;
+        });
+        resultsDiv.innerHTML = resHTML;
+    }
+
+    // 監聽器綁定
+    inputP.addEventListener('input', (e) => {
+        P = parseFloat(e.target.value);
+        valP.innerText = P;
+        calculateWaterFilling();
+    });
+
+    inputsH.forEach(input => {
+        input.addEventListener('input', (e) => {
+            const index = parseInt(e.target.getAttribute('data-index'));
+            H[index] = parseFloat(e.target.value);
+            document.getElementById(`val-H${index}`).innerText = H[index];
+            calculateWaterFilling();
+        });
+    });
+
+    // 初始執行
+    calculateWaterFilling();
+</script>
+</body>
+</html>
