@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>記一筆</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#f3f3f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="記一筆">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #f3f3f1; }
+  @media (prefers-color-scheme: dark) { html, body { background: #121211; } }
+  /* 讓 App 避開瀏海和底部橫條 */
+  iframe {
+    position: fixed; left: 0; right: 0;
+    top: env(safe-area-inset-top); bottom: env(safe-area-inset-bottom);
+    width: 100%; height: calc(100% - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    border: 0;
+  }
+</style>
+</head>
+<body>
+<!-- 把下面的網址換成你的 Apps Script 網頁應用程式網址（結尾是 /exec） -->
+<iframe src="https://script.google.com/macros/s/AKfycby_xkY3psBa9eA9lPxzH7NA6S9siUE6wv1-iCoeqMh0wijNo8vp23zNDGz5y_uKbY-1qw/exec" title="記一筆" allow="clipboard-write"></iframe>
+<script>
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+</body>
+</html>
